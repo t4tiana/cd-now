@@ -1,14 +1,12 @@
 """Load every CDnow source line into a local DuckDB raw table."""
 
-from collections.abc import Iterator
 import json
-from pathlib import Path
 import sys
+from collections.abc import Iterator
+from pathlib import Path
 
 import duckdb
-
 from source_manifest import measure_source
-
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_PATH = REPOSITORY_ROOT / "CDNOW_data" / "CDNOW_master.txt"
@@ -28,7 +26,9 @@ def parse_line(line_number: int, original_line: str) -> dict[str, int | str | No
         reason = None
         customer_id, transaction_date, cd_count, dollar_value = fields
     else:
-        status = "blank" if field_count == 0 else "short" if field_count < 4 else "extra"
+        status = (
+            "blank" if field_count == 0 else "short" if field_count < 4 else "extra"
+        )
         reason = f"expected 4 fields; found {field_count}"
         customer_id = transaction_date = cd_count = dollar_value = None
 
@@ -101,12 +101,15 @@ def load() -> dict[str, int | str]:
             f"""CREATE OR REPLACE VIEW {DATASET}.four_field_lines AS
                 SELECT * FROM {DATASET}.source_lines WHERE parse_status = 'four_fields'"""
         )
-        raw_count, distinct_lines, four_field_count, malformed_count = connection.execute(
+        counts = connection.execute(
             f"""SELECT count(*), count(DISTINCT source_line_number),
                        count(*) FILTER (WHERE parse_status = 'four_fields'),
                        count(*) FILTER (WHERE parse_status <> 'four_fields')
                 FROM {DATASET}.source_lines"""
         ).fetchone()
+        if counts is None:
+            raise ValueError("Raw reconciliation query returned no row")
+        raw_count, distinct_lines, four_field_count, malformed_count = counts
 
         if raw_count != current_manifest["line_count"]:
             raise ValueError("Raw row count does not match physical source lines")

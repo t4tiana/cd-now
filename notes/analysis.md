@@ -11,9 +11,17 @@ Guide all analysis by the principle: **try to falsify beliefs rather than confir
 - Label forecasts and inferences as such, show the assumptions they depend on, and avoid presenting them as established facts. If evidence is unavailable or insufficient, say so rather than filling the gap with an unsupported assertion.
 - Keep the historical decision frame: use information available at the time for the investment judgment. Any later source used for general analytical methods must be identified as later and must not introduce hindsight about subsequent market outcomes.
 
+## Available evidence and follow-up
+
+Assume the supplied Q1 1997 transaction file is the only CDnow dataset available for this assessment. Proceed with analysis and a conditional recommendation using it; do not wait for further company data. Place missing decision-critical company inputs in a prioritized follow-up list in the written output, stating which conclusion each could change. Public sources may provide contemporaneous market context or clearly labeled proxies, but cannot establish CDnow's own acquisition costs, margins, refunds, or contractually eligible revenue. Apply the historical source rule above to all public research.
+
+## Scope of the investment memo
+
+The interview deliverable should demonstrate judgment with limited evidence, not imitate a legal agreement. Define the proposed cohort and the repayment-base assumption clearly enough to model the 50% share and 1.2x cap. Discuss a contract ambiguity in the memo when it could change the forecast, advance, repayment timing, or recommendation; state the assumption, show a sensitivity if useful, and add the unresolved point to follow-up. Leave detailed clauses and immaterial edge cases out of the main recommendation. Keep the emphasis on revenue quality, future-cohort scenarios, whether and how much to advance, and the missing facts most likely to change that view.
+
 ## Validate and document the data
 
-Progress tracker for the first phase of the assessment. Assume the supplied transaction file is the only available dataset until that changes. Update each row when its work starts, reaches an intermediate state, or is complete. Use **Done** only when its completion evidence exists; link to that evidence or explain a blocker in the progress cell. Keep the raw file unchanged. No analysis of cohort behavior should rely on records silently dropped or altered during this phase.
+Progress tracker for the first phase of the assessment. The supplied transaction file is the only CDnow dataset available. Update each row when its work starts, reaches an intermediate state, or is complete. Use **Done** only when its completion evidence exists; link to that evidence or explain a blocker in the progress cell. Keep the raw file unchanged. No analysis of cohort behavior should rely on records silently dropped or altered during this phase.
 
 ### 1. Establish the raw-data contract
 
@@ -67,23 +75,23 @@ Progress tracker for the first phase of the assessment. Assume the supplied tran
 
 | ID | Task and completion evidence | Progress |
 | --- | --- | --- |
-| 5.1 | Produce a data-quality report listing every check, its result, affected line numbers or a reproducible query for them, and any unresolved question. | Not Started |
-| 5.2 | Assign a disposition to each finding: retain, exclude from typed analysis, correct with a documented rule, or unresolved. Explain the reason. | Not Started |
-| 5.3 | Preserve plausible transactions, including identical-looking records, unless evidence supports a different treatment. | Not Started |
-| 5.4 | Isolate structurally invalid records without erasing them from the raw load or reconciliation. | Not Started |
-| 5.5 | Do not infer missing purchases, refunds, or cancellations from the transaction file. Record these as data limits. | Not Started |
-| 5.6 | Show the effect of each exclusion or correction on transaction count, customer count, and revenue totals used later. | Not Started |
+| 5.1 | Produce a data-quality report listing every check, its result, affected line numbers or a reproducible query for them, and any unresolved question. | Done — [readable report](../docs/validity_checks.md), [all results and line queries](../reports/data_quality.json), and [open questions](../docs/exception_review.md) |
+| 5.2 | Assign a disposition to each finding: retain, exclude from typed analysis, correct with a documented rule, or unresolved. Explain the reason. | Done — [disposition table](../docs/exception_review.md); all current rows retained, business interpretations unresolved |
+| 5.3 | Preserve plausible transactions, including identical-looking records, unless evidence supports a different treatment. | Done — [repeat-row decision](../docs/exception_review.md); no deduplication applied |
+| 5.4 | Isolate structurally invalid records without erasing them from the raw load or reconciliation. | Done for current file — 0 structural failures; [raw malformed view](../docs/raw_load.md#queryable-outputs) and [staging rejection view](../docs/staging.md) preserve the isolation path for future input |
+| 5.5 | Do not infer missing purchases, refunds, or cancellations from the transaction file. Record these as data limits. | Done — [unresolved data limits](../docs/exception_review.md) |
+| 5.6 | Show the effect of each exclusion or correction on transaction count, customer count, and revenue totals used later. | Done — [impact report](../reports/exception_impact.json) and [explanation](../docs/exception_review.md); no applied change, two unadopted sensitivities quantified |
 
 ### 6. Make it repeatable
 
 | ID | Task and completion evidence | Progress |
 | --- | --- | --- |
-| 6.1 | Organize the loader, dbt staging model and tests, pytest tests, quality report, configuration, and documentation into clear project files. Adjust the layout as needed rather than forcing a single-file solution. | Not Started |
-| 6.2 | Declare and pin or constrain the Python dependencies needed for the pipeline; use a local DuckDB file and avoid requiring MotherDuck credentials. | Done for current pipeline — [pinned dependencies](../requirements-dbt.txt) and [local profile](../dbt/profiles.yml); `dbt debug` passed. Add dependencies as later phases need them. |
-| 6.3 | Write README setup and run commands that rebuild the derived data and quality report from the committed source file. | Not Started |
-| 6.4 | Add focused pytest cases for parsing and malformed inputs, and dbt tests for staged data invariants. | Not Started |
-| 6.5 | Configure and run applicable ruff, pyright, sqlfmt, and pre-commit checks; record any tool intentionally deferred and why. | Not Started |
-| 6.6 | Perform a clean rerun and verify that counts, source hash, exceptions, and quality report are reproducible, and that every reported record traces to a source line. | Not Started |
+| 6.1 | Organize the loader, dbt staging model and tests, pytest tests, quality report, configuration, and documentation into clear project files. Adjust the layout as needed rather than forcing a single-file solution. | Done — [scripts](../scripts), [dbt models and tests](../dbt), [pytest cases](../tests/test_raw_parser.py), [reports](../reports), and [README](../README.md) |
+| 6.2 | Declare and pin or constrain the Python dependencies needed for the pipeline; use a local DuckDB file and avoid requiring MotherDuck credentials. | Done — [pipeline dependencies](../requirements-dbt.txt), [development checks](../requirements-dev.txt), and [local profile](../dbt/profiles.yml); no MotherDuck credentials |
+| 6.3 | Write README setup and run commands that rebuild the derived data and quality report from the committed source file. | Done — [setup, rebuild, and check commands](../README.md) |
+| 6.4 | Add focused pytest cases for parsing and malformed inputs, and dbt tests for staged data invariants. | Done — [3 pytest cases](../tests/test_raw_parser.py) and [7 passing dbt tests](../dbt/tests) |
+| 6.5 | Configure and run applicable ruff, pyright, sqlfmt, and pre-commit checks; record any tool intentionally deferred and why. | Done — [local hook configuration](../.pre-commit-config.yaml), [Pyright config](../pyrightconfig.json); Ruff, Pyright, sqlfmt, pytest, and dbt passed in pre-commit; no tool deferred |
+| 6.6 | Perform a clean rerun and verify that counts, source hash, exceptions, and quality report are reproducible, and that every reported record traces to a source line. | Done — rebuilt after removing the derived DuckDB file; [verification script](../scripts/verify_phase1.py) matched all 69,659 stored original lines to source, checked 19 line queries, and all three [reports](../reports) regenerated byte-for-byte identically |
 
 ## Dataset described by the readme
 
@@ -113,7 +121,7 @@ The file covers every purchase for the specified 23,570-person cohort through Ju
 
 The analysis can therefore describe **observed cohort revenue and repeat-purchase behavior**, and support a **conditional forecast**. It cannot by itself show whether the cohort generated enough contribution to repay an advance or whether future cohorts will behave similarly.
 
-## Highest-impact additional information to request
+## Highest-impact follow-up requests for the written recommendation
 
 - Acquisition spend by cohort and marketing channel, plus channel mix.
 - Gross margin and costs of CDs, fulfillment, shipping, payment processing, and customer support.
@@ -122,4 +130,4 @@ The analysis can therefore describe **observed cohort revenue and repeat-purchas
 - Cohort attribution rules, revenue eligibility under the financing agreement, and cash collection mechanics.
 - Proposed advance amount and timing, to model repayment timing against the 50% revenue share and 1.2x repayment cap.
 
-These inputs could change the investment decision. Prioritize them by how much they could alter the estimated cohort contribution, repayment timing, or likelihood of reaching the cap.
+These inputs could change the investment decision. Include them as follow-up requests in the output, prioritized by how much they could alter estimated cohort contribution, repayment timing, or likelihood of reaching the cap. Continue the analysis with explicit assumptions and downside cases rather than waiting for them.

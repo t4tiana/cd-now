@@ -19,7 +19,10 @@ need to recreate or activate it each time. Call its executables directly:
 .\.venv\Scripts\python.exe scripts\load_raw.py
 .\.venv\Scripts\dbt.exe debug --project-dir dbt --profiles-dir dbt
 .\.venv\Scripts\dbt.exe run --project-dir dbt --profiles-dir dbt
+.\.venv\Scripts\dbt.exe test --project-dir dbt --profiles-dir dbt
 .\.venv\Scripts\python.exe scripts\check_quality.py
+.\.venv\Scripts\python.exe scripts\exception_impact.py
+.\.venv\Scripts\python.exe scripts\verify_phase1.py
 ```
 
 For an interactive PowerShell session, run
@@ -37,8 +40,23 @@ process while dbt writes to it.
 The [staging notes](docs/staging.md) define the typed fields, conversion rules,
 and queryable exception output. The [validity-check report](docs/validity_checks.md)
 summarizes step 4, with counts and source-line queries in
-[`reports/data_quality.json`](reports/data_quality.json).
+[`reports/data_quality.json`](reports/data_quality.json). The
+[exception review](docs/exception_review.md) records row dispositions and the
+effect of alternative treatments. For a short recap, see the
+[phase 1 brief](notes/phase1_brief.md).
+
+To run development checks, install the pinned test and formatting tools once:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.\.venv\Scripts\pre-commit.exe run --all-files
+```
+
+The local pre-commit hooks run Ruff, Pyright, sqlfmt, pytest, dbt tests, and
+the phase 1 source-to-report reconciliation. Run the raw load and dbt build
+before those hooks on a new checkout. The hooks use the project-local Windows
+venv and do not download hook environments.
 
 `requirements-dbt.txt` pins DuckDB for raw ingestion and the dbt DuckDB adapter
-for transformations and tests. The transaction file supports observed behavior of one cohort; see
+for transformations; `requirements-dev.txt` adds test and check tools. The transaction file supports observed behavior of one cohort; see
 `notes/analysis.md` for the limits on investment conclusions.

@@ -5,7 +5,6 @@ import hashlib
 import json
 from pathlib import Path
 
-
 SOURCE_RELATIVE_PATH = Path("CDNOW_data/CDNOW_master.txt")
 MANIFEST_RELATIVE_PATH = Path("docs/source_manifest.json")
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
@@ -32,7 +31,9 @@ def measure_source(path: Path) -> dict[str, int | str]:
 def main() -> None:
     """Print current measurements or check them against the saved manifest."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="compare with the saved manifest")
+    parser.add_argument(
+        "--check", action="store_true", help="compare with the saved manifest"
+    )
     args = parser.parse_args()
 
     current = measure_source(REPOSITORY_ROOT / SOURCE_RELATIVE_PATH)

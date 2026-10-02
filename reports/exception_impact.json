@@ -1,0 +1,42 @@
+{
+  "source_sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07",
+  "chosen_treatment": "retain every source line; no exclusions or corrections",
+  "baseline_and_chosen_analysis_input": {
+    "transaction_rows": 69659,
+    "distinct_customers": 23570,
+    "reported_dollars": "2500315.63"
+  },
+  "applied_change": {
+    "transaction_rows": 0,
+    "distinct_customers": 0,
+    "reported_dollars": "0.00"
+  },
+  "unadopted_sensitivities": {
+    "remove_all_zero_dollar_rows": {
+      "result": {
+        "transaction_rows": 69579,
+        "distinct_customers": 23502,
+        "reported_dollars": "2500315.63"
+      },
+      "change_from_baseline": {
+        "transaction_rows": -80,
+        "distinct_customers": -68,
+        "reported_dollars": "0.00"
+      },
+      "reason_not_adopted": "Their business meaning is unknown; 68 customers have no other recorded row."
+    },
+    "keep_one_of_each_exact_four_field_combination": {
+      "result": {
+        "transaction_rows": 69404,
+        "distinct_customers": 23570,
+        "reported_dollars": "2495982.75"
+      },
+      "change_from_baseline": {
+        "transaction_rows": -255,
+        "distinct_customers": 0,
+        "reported_dollars": "-4332.88"
+      },
+      "reason_not_adopted": "No order ID or other evidence proves these are duplicate transactions."
+    }
+  }
+}

@@ -1,0 +1,45 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: Ruff lint
+        entry: .venv/Scripts/ruff.exe check scripts tests
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: ruff-format
+        name: Ruff format
+        entry: .venv/Scripts/ruff.exe format --check scripts tests
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: pyright
+        name: Pyright
+        entry: .venv/Scripts/pyright.exe
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: sqlfmt
+        name: sqlfmt
+        entry: .venv/Scripts/sqlfmt.exe --check dbt/models dbt/tests
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: pytest
+        name: pytest
+        entry: .venv/Scripts/python.exe -m pytest -q
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: dbt-test
+        name: dbt tests
+        entry: .venv/Scripts/dbt.exe test --project-dir dbt --profiles-dir dbt
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: phase1-verify
+        name: Phase 1 reconciliation
+        entry: .venv/Scripts/python.exe scripts/verify_phase1.py
+        language: system
+        pass_filenames: false
+        always_run: true

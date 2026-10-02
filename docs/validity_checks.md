@@ -33,4 +33,4 @@ The script writes [`reports/data_quality.json`](../reports/data_quality.json). F
 - Are very large transactions genuine bulk purchases or recording errors? The largest row is source line 27633.
 - How are refunds, cancellations, customer identities, and cash collection represented? The four-field file cannot answer these questions.
 
-Step 5 will assign explicit dispositions and quantify any exclusion or correction before cohort behavior is analyzed. For now, **all 69,659 lines remain in staging**. The checks establish consistency with the readme and identify questions; they do not establish margin, customer acquisition cost, future-cohort behavior, or investor payback.
+[Step 5](exception_review.md) records the dispositions and the effect of possible exclusions. **All 69,659 lines remain in staging**. The checks establish consistency with the readme and identify questions; they do not establish margin, customer acquisition cost, future-cohort behavior, or investor payback.
