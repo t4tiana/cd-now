@@ -1,0 +1,215 @@
+{
+  "source_sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07",
+  "database": "data/cdnow.duckdb",
+  "step_4_1_structure": {
+    "blank": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_raw.source_lines WHERE parse_status = 'blank' ORDER BY source_line_number"
+    },
+    "short": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_raw.source_lines WHERE parse_status = 'short' ORDER BY source_line_number"
+    },
+    "extra": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_raw.source_lines WHERE parse_status = 'extra' ORDER BY source_line_number"
+    },
+    "four_field_rows": 69659
+  },
+  "step_4_2_customer_ids": {
+    "expected_form": "exactly five ASCII digits, as in the supplied source",
+    "missing": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE customer_id IS NULL OR customer_id = '' ORDER BY source_line_number"
+    },
+    "wrong_form": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE customer_id IS NOT NULL AND NOT regexp_full_match(customer_id, '[0-9]{5}') ORDER BY source_line_number"
+    },
+    "distinct_customers": 23570
+  },
+  "step_4_3_dates": {
+    "unparseable": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE parse_status = 'four_fields' AND transaction_date IS NULL ORDER BY source_line_number"
+    },
+    "out_of_observation_window": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE transaction_date < DATE '1997-01-01' OR transaction_date > DATE '1998-06-30' ORDER BY source_line_number"
+    },
+    "earliest": "1997-01-01",
+    "latest": "1998-06-30",
+    "distinct_transaction_dates": 546
+  },
+  "step_4_4_cohort_entry": {
+    "definition": "earliest recorded purchase per customer in 1997-01-01 through 1997-03-31",
+    "customers_outside_q1_1997": 0,
+    "all_source_lines_query": "WITH first_dates AS (SELECT customer_id, min(transaction_date) AS first_date FROM cdnow_analysis.stg_cdnow_transactions WHERE customer_id IS NOT NULL GROUP BY customer_id) SELECT s.source_line_number FROM cdnow_analysis.stg_cdnow_transactions s JOIN first_dates f ON s.customer_id = f.customer_id AND s.transaction_date = f.first_date WHERE f.first_date < DATE '1997-01-01' OR f.first_date > DATE '1997-03-31' ORDER BY s.source_line_number",
+    "earliest_first_purchase": "1997-01-01",
+    "latest_first_purchase": "1997-03-25"
+  },
+  "step_4_5_cd_counts": {
+    "zero": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE cd_count = 0 ORDER BY source_line_number"
+    },
+    "negative": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE cd_count < 0 ORDER BY source_line_number"
+    },
+    "fractional_string": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE regexp_full_match(cd_count_raw, '[+-]?[0-9]+\\.[0-9]+') ORDER BY source_line_number"
+    },
+    "other_unparseable": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE parse_status = 'four_fields' AND cd_count IS NULL AND NOT coalesce(regexp_full_match(cd_count_raw, '[+-]?[0-9]+\\.[0-9]+'), false) ORDER BY source_line_number"
+    },
+    "maximum": 99
+  },
+  "step_4_6_dollars": {
+    "zero": {
+      "count": 80,
+      "sample_source_lines": [
+        1549,
+        2447,
+        3067,
+        3119,
+        3624,
+        3850,
+        3944,
+        4330,
+        4399,
+        5618
+      ],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE transaction_dollars = 0 ORDER BY source_line_number"
+    },
+    "negative": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE transaction_dollars < 0 ORDER BY source_line_number"
+    },
+    "non_cent_precision_string": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE regexp_full_match(dollar_value_raw, '[+-]?[0-9]+\\.[0-9]{3,}') ORDER BY source_line_number"
+    },
+    "other_unparseable": {
+      "count": 0,
+      "sample_source_lines": [],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE parse_status = 'four_fields' AND transaction_dollars IS NULL AND NOT coalesce(regexp_full_match(dollar_value_raw, '[+-]?[0-9]+\\.[0-9]{3,}'), false) ORDER BY source_line_number"
+    },
+    "maximum": "1286.01"
+  },
+  "step_4_7_reconciliation": {
+    "raw_rows": 69659,
+    "staged_rows": 69659,
+    "conversion_failures": 0,
+    "distinct_customers": 23570,
+    "readme_expected_transactions": 69659,
+    "readme_expected_customers": 23570
+  },
+  "step_4_8_load_identity": {
+    "raw_distinct_source_lines": 69659,
+    "staged_distinct_source_lines": 69659,
+    "staged_distinct_record_ids": 69659,
+    "raw_to_staged_line_or_text_mismatches": 0
+  },
+  "step_4_9_repeated_looking_records": {
+    "exact_four_field_values": {
+      "groups": 215,
+      "rows_in_groups": 470,
+      "rows_beyond_first_in_group": 255,
+      "sample_source_lines": [
+        1381,
+        1382,
+        1665,
+        1666,
+        1667,
+        1668,
+        1669,
+        1670,
+        1676,
+        1677
+      ],
+      "all_source_lines_query": "SELECT source_line_number FROM (SELECT source_line_number, count(*) OVER (PARTITION BY customer_id_raw, transaction_date_raw, cd_count_raw, dollar_value_raw) AS n FROM cdnow_analysis.stg_cdnow_transactions) WHERE n > 1 ORDER BY source_line_number"
+    },
+    "same_customer_and_date": {
+      "groups": 1774,
+      "rows_in_groups": 3842,
+      "rows_beyond_first_in_group": 2068,
+      "sample_source_lines": [
+        2,
+        3,
+        33,
+        34,
+        87,
+        88,
+        147,
+        148,
+        149,
+        153
+      ],
+      "all_source_lines_query": "SELECT source_line_number FROM (SELECT source_line_number, count(*) OVER (PARTITION BY customer_id, transaction_date) AS n FROM cdnow_analysis.stg_cdnow_transactions) WHERE n > 1 ORDER BY source_line_number"
+    },
+    "interpretation": "No order ID exists; neither pattern proves duplicated transactions."
+  },
+  "step_4_10_profile": {
+    "large_cd_threshold": "10 or more CDs on one source line",
+    "large_cd_rows": {
+      "count": 1113,
+      "sample_source_lines": [
+        55,
+        57,
+        58,
+        252,
+        737,
+        747,
+        885,
+        972,
+        991,
+        1007
+      ],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE cd_count >= 10 ORDER BY source_line_number"
+    },
+    "large_dollar_threshold": "200.00 dollars or more on one source line",
+    "large_dollar_rows": {
+      "count": 464,
+      "sample_source_lines": [
+        57,
+        58,
+        404,
+        405,
+        503,
+        737,
+        1073,
+        1075,
+        1077,
+        1421
+      ],
+      "all_source_lines_query": "SELECT source_line_number FROM cdnow_analysis.stg_cdnow_transactions WHERE transaction_dollars >= 200.00 ORDER BY source_line_number"
+    },
+    "cd_count_99th_percentile": 11.0,
+    "dollars_99th_percentile": "173.12",
+    "missing_calendar_dates": {
+      "count": 0,
+      "all_dates_query": "SELECT calendar_day::DATE FROM generate_series(DATE '1997-01-01', DATE '1998-06-30', INTERVAL 1 DAY) AS days(calendar_day) WHERE calendar_day::DATE NOT IN (SELECT transaction_date FROM cdnow_analysis.stg_cdnow_transactions WHERE transaction_date IS NOT NULL) ORDER BY calendar_day"
+    },
+    "missing_customer_ids_between_00001_and_23570": {
+      "count": 0,
+      "all_ids_query": "SELECT lpad(cast(n AS VARCHAR), 5, '0') AS missing_customer_id FROM generate_series(1, 23570) AS numbers(n) WHERE lpad(cast(n AS VARCHAR), 5, '0') NOT IN (SELECT customer_id FROM cdnow_analysis.stg_cdnow_transactions WHERE customer_id IS NOT NULL) ORDER BY n"
+    },
+    "gap_interpretation": "A gap would be a profile finding, not proof of a bad record or missing purchase."
+  }
+}

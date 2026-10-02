@@ -74,6 +74,7 @@ docs/_build/
 # PyBuilder
 .pybuilder/
 target/
+dbt_packages/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -218,5 +219,9 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Local notes and AI agent files
-/notes/
+/notes/*
+!/notes/analysis.md
 AGENTS.md
+
+# Rebuildable local database and dlt state
+/data/

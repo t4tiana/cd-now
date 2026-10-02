@@ -1,0 +1,12 @@
+{
+  "source_sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07",
+  "input_lines": 69659,
+  "raw_rows": 69659,
+  "distinct_source_lines": 69659,
+  "four_field_rows": 69659,
+  "malformed_rows": 0,
+  "database": "data/cdnow.duckdb",
+  "raw_table": "cdnow_raw.source_lines",
+  "four_field_view": "cdnow_raw.four_field_lines",
+  "malformed_view": "cdnow_raw.malformed_lines"
+}

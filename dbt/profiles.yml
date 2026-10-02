@@ -1,0 +1,8 @@
+cdnow:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/cdnow.duckdb
+      schema: cdnow_analysis
+      threads: 1

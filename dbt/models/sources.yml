@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: cdnow_raw
+    schema: cdnow_raw
+    tables:
+      - name: source_lines
+        description: One row per physical line of the unchanged CDNOW master file.

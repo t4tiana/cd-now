@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_cdnow_transactions
+    description: All source lines with typed values where conversion succeeds; no row is dropped.
+    columns:
+      - name: source_record_id
+        description: Stable input identifier formed from the source filename and one-based line number.
+      - name: source_line_number
+        description: One-based physical line number in the supplied file.
+      - name: original_line
+        description: Original source text, including its line terminator.
+      - name: customer_id
+        description: Customer ID copied as text from customer_id_raw; leading zeroes remain.
+      - name: transaction_date
+        description: DATE parsed from transaction_date_raw only when it is exactly YYYYMMDD and a real date.
+      - name: cd_count
+        description: INTEGER parsed from cd_count_raw when it is an integer string within range.
+      - name: transaction_dollars
+        description: DECIMAL(18,2) parsed from dollar_value_raw only when it has at most two decimal places.
+      - name: conversion_issue
+        description: All structural and conversion failures for the line; NULL means all four fields converted.
+  - name: stg_cdnow_rejections
+    description: Queryable subset of staged lines with a structural or conversion failure.
