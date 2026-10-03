@@ -6,7 +6,7 @@ The source is [`CDNOW_data/CDNOW_master.txt`](../CDNOW_data/CDNOW_master.txt), d
 
 The readme reports **69,659 transaction records** and **23,570 customers**. These are source claims to verify during data validation. The expected earliest cohort-entry window is January 1–March 31, 1997; the expected observation cutoff is June 30, 1998. Neither statement proves that every row or customer in the file meets those expectations.
 
-The readme cites a 2001 paper. That citation documents the dataset's later use; the investment recommendation must use only information available in the late-1990s decision frame.
+The readme cites a 2001 paper. That citation documents the dataset's later use; the investment recommendation uses only external information published by July 15, 1998. The later paper is not a source for the historical judgment.
 
 ## Physical format and fields
 

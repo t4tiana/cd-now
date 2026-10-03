@@ -42,8 +42,44 @@ and queryable exception output. The [validity-check report](docs/validity_checks
 summarizes step 4, with counts and source-line queries in
 [`reports/data_quality.json`](reports/data_quality.json). The
 [exception review](docs/exception_review.md) records row dispositions and the
-effect of alternative treatments. For a short recap, see the
-[phase 1 brief](notes/phase1_brief.md).
+effect of alternative treatments. For a short local recap, see
+`notes/phase1_brief.md`.
+
+## Phase 2: observed cohort analysis
+
+The [measurement contract](docs/cohort_measurement_contract.md) defines the cohort,
+transaction and revenue measures, time windows, and censoring rules. After the raw
+load and dbt build above, run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\cohort_analysis.py
+.\.venv\Scripts\python.exe scripts\render_cohort_tables.py
+```
+
+This writes [`reports/cohort_analysis.json`](reports/cohort_analysis.json). It
+identifies the source and definitions, checks the full staged input against phase
+1's row, customer, and reported-dollar totals, and reports observed dollars,
+transaction rows, and purchasing customers by calendar quarter. Q1 1997 is shown
+separately from later quarters. It also reports 30-day customer-age periods with
+the fully observed customer count beside each rate. Rows in partial age periods
+remain in the calendar and full-file totals and are reconciled separately. The
+script stops with an error if the source file changed, the phase 1 report does
+not match it, staging has conversion issues, or totals do not reconcile.
+
+The same report now includes later-date repeat counts and 30-, 60-, and 90-day
+repeat horizons; transaction-row frequency; observed customer-dollar
+distribution; revenue by elapsed-day bucket; and top-customer and
+top-transaction concentration. The second command renders these results as
+readable tables in [`reports/cohort_tables.md`](reports/cohort_tables.md).
+A later-date
+repeat requires a recorded transaction after the entry date, so extra same-day
+rows do not count. The report shows a positive-dollar repeat sensitivity and
+retains zero-dollar rows. These measures describe the observed window only;
+the source file does not identify distinct orders or lifetime behavior.
+
+The [historical market context](docs/historical_market_context.md) records
+contemporaneous CD retail and CDnow information separately from the transaction
+data. It does not assign a cause to this cohort's purchasing pattern.
 
 To run development checks, install the pinned test and formatting tools once:
 

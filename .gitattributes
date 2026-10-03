@@ -1,0 +1,3 @@
+# Keep project documentation and Python source in LF on every platform.
+*.md text eol=lf
+*.py text eol=lf

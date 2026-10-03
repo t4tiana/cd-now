@@ -12,7 +12,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe scripts\load_raw.py
 ```
 
-In an editor, choose `C:\Users\tiana\Software\cd-now\.venv\Scripts\python.exe` as this project's interpreter. The single requirements file installs DuckDB for the loader and dbt for typed staging. We tried a dlt load first; its pipeline initialization was unusually slow in this environment, so this fixed local file uses DuckDB's bulk JSON import. The source parser and its output remain independent of that loading choice.
+In an editor, choose `.venv/Scripts/python.exe` from the repository root as this project's interpreter. The single requirements file installs DuckDB for the loader and dbt for typed staging. We tried a dlt load first; its pipeline initialization was unusually slow in this environment, so this fixed local file uses DuckDB's bulk JSON import. The source parser and its output remain independent of that loading choice.
 
 The script checks the source against [`source_manifest.json`](source_manifest.json), creates a local `data/cdnow.duckdb`, and writes [`reports/raw_load.json`](../reports/raw_load.json). The database and temporary `data/raw_lines.ndjson` transfer file are derived and ignored by Git. Rerunning replaces the raw table instead of appending to it.
 

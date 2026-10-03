@@ -225,3 +225,6 @@ AGENTS.md
 
 # Rebuildable local database and dlt state
 /data/
+
+# dbt-generated local user identifier
+/dbt/.user.yml

@@ -1,0 +1,518 @@
+{
+  "phase": "2: observed cohort",
+  "status": "P2.6 repeat purchasing and customer distribution calculated; findings note and final verification remain",
+  "source_manifest": {
+    "path": "CDNOW_data/CDNOW_master.txt",
+    "size_bytes": 1950452,
+    "line_count": 69659,
+    "sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07"
+  },
+  "measurement_contract": {
+    "path": "docs/cohort_measurement_contract.md",
+    "sha256": "8a50474b473bab8a44b4337c41a0c4a3483f7c2670260d526204c3f0983e7f38"
+  },
+  "observation_window": {
+    "start": "1997-01-01",
+    "cutoff_inclusive": "1998-06-30",
+    "cohort_entry": "first recorded transaction in Q1 1997"
+  },
+  "analysis_input": {
+    "relation": "cdnow_analysis.stg_cdnow_transactions",
+    "row_treatment": "retain all source rows, including zero-dollar and repeated-looking rows",
+    "revenue_definition": "reported transaction dollars; not cash collected, profit, forecast or repayment-eligible revenue",
+    "customer_age_period_days": 30,
+    "age_zero": "days 0-29 from each customer's first recorded date, including entry",
+    "full_window_denominator": "only customers observable through the end of the age period"
+  },
+  "reconciliation": {
+    "staged": {
+      "transaction_rows": 69659,
+      "distinct_customers": 23570,
+      "reported_dollars": "2500315.63",
+      "conversion_issue_rows": 0
+    },
+    "phase1_baseline": {
+      "transaction_rows": 69659,
+      "distinct_customers": 23570,
+      "reported_dollars": "2500315.63"
+    },
+    "matches_phase1": true
+  },
+  "calendar_quarters": {
+    "definition": "transaction calendar quarters; purchasing customers include zero-dollar rows; customer counts are not additive across quarters",
+    "periods": [
+      {
+        "calendar_quarter": "1997Q1",
+        "quarter_start": "1997-01-01",
+        "transaction_rows": 31798,
+        "purchasing_customers": 23570,
+        "customers_with_positive_dollars": 23500,
+        "zero_dollar_transaction_rows": 73,
+        "reported_dollars": "1071805.47"
+      },
+      {
+        "calendar_quarter": "1997Q2",
+        "quarter_start": "1997-04-01",
+        "transaction_rows": 9730,
+        "purchasing_customers": 5376,
+        "customers_with_positive_dollars": 5376,
+        "zero_dollar_transaction_rows": 0,
+        "reported_dollars": "359153.66"
+      },
+      {
+        "calendar_quarter": "1997Q3",
+        "quarter_start": "1997-07-01",
+        "transaction_rows": 7558,
+        "purchasing_customers": 4263,
+        "customers_with_positive_dollars": 4263,
+        "zero_dollar_transaction_rows": 0,
+        "reported_dollars": "292395.37"
+      },
+      {
+        "calendar_quarter": "1997Q4",
+        "quarter_start": "1997-10-01",
+        "transaction_rows": 7816,
+        "purchasing_customers": 4221,
+        "customers_with_positive_dollars": 4221,
+        "zero_dollar_transaction_rows": 0,
+        "reported_dollars": "300806.76"
+      },
+      {
+        "calendar_quarter": "1998Q1",
+        "quarter_start": "1998-01-01",
+        "transaction_rows": 6851,
+        "purchasing_customers": 3817,
+        "customers_with_positive_dollars": 3817,
+        "zero_dollar_transaction_rows": 6,
+        "reported_dollars": "262823.89"
+      },
+      {
+        "calendar_quarter": "1998Q2",
+        "quarter_start": "1998-04-01",
+        "transaction_rows": 5906,
+        "purchasing_customers": 3317,
+        "customers_with_positive_dollars": 3317,
+        "zero_dollar_transaction_rows": 1,
+        "reported_dollars": "213330.48"
+      }
+    ],
+    "entry_quarter": {
+      "calendar_quarter": "1997Q1",
+      "reported_dollars": "1071805.47"
+    },
+    "later_calendar_quarters": {
+      "reported_dollars": "1428510.16"
+    },
+    "interpretation": "All cohort members entered in Q1 1997; entry-quarter dollars include first and later purchases made that quarter. Later calendar quarters mix customers at different ages since entry."
+  },
+  "customer_age_periods": {
+    "definition": "consecutive 30-day periods from each customer's first recorded date; only fully observable customer-periods enter rates, averages, and comparable age totals",
+    "periods": [
+      {
+        "age_period": 0,
+        "first_day_after_entry": 0,
+        "last_day_after_entry": 29,
+        "eligible_customers": 23570,
+        "transaction_rows": 29592,
+        "purchasing_customers": 23570,
+        "customers_with_positive_dollars": 23500,
+        "reported_dollars": "990452.48",
+        "purchasing_customer_percent": "100.0",
+        "dollars_per_eligible_customer": "42.02"
+      },
+      {
+        "age_period": 1,
+        "first_day_after_entry": 30,
+        "last_day_after_entry": 59,
+        "eligible_customers": 23570,
+        "transaction_rows": 4131,
+        "purchasing_customers": 3088,
+        "customers_with_positive_dollars": 3088,
+        "reported_dollars": "154774.60",
+        "purchasing_customer_percent": "13.1",
+        "dollars_per_eligible_customer": "6.57"
+      },
+      {
+        "age_period": 2,
+        "first_day_after_entry": 60,
+        "last_day_after_entry": 89,
+        "eligible_customers": 23570,
+        "transaction_rows": 3118,
+        "purchasing_customers": 2375,
+        "customers_with_positive_dollars": 2375,
+        "reported_dollars": "116597.64",
+        "purchasing_customer_percent": "10.1",
+        "dollars_per_eligible_customer": "4.95"
+      },
+      {
+        "age_period": 3,
+        "first_day_after_entry": 90,
+        "last_day_after_entry": 119,
+        "eligible_customers": 23570,
+        "transaction_rows": 2840,
+        "purchasing_customers": 2149,
+        "customers_with_positive_dollars": 2149,
+        "reported_dollars": "103575.54",
+        "purchasing_customer_percent": "9.1",
+        "dollars_per_eligible_customer": "4.39"
+      },
+      {
+        "age_period": 4,
+        "first_day_after_entry": 120,
+        "last_day_after_entry": 149,
+        "eligible_customers": 23570,
+        "transaction_rows": 2792,
+        "purchasing_customers": 2110,
+        "customers_with_positive_dollars": 2110,
+        "reported_dollars": "108724.32",
+        "purchasing_customer_percent": "9.0",
+        "dollars_per_eligible_customer": "4.61"
+      },
+      {
+        "age_period": 5,
+        "first_day_after_entry": 150,
+        "last_day_after_entry": 179,
+        "eligible_customers": 23570,
+        "transaction_rows": 2661,
+        "purchasing_customers": 2024,
+        "customers_with_positive_dollars": 2024,
+        "reported_dollars": "100862.03",
+        "purchasing_customer_percent": "8.6",
+        "dollars_per_eligible_customer": "4.28"
+      },
+      {
+        "age_period": 6,
+        "first_day_after_entry": 180,
+        "last_day_after_entry": 209,
+        "eligible_customers": 23570,
+        "transaction_rows": 2423,
+        "purchasing_customers": 1868,
+        "customers_with_positive_dollars": 1868,
+        "reported_dollars": "93711.16",
+        "purchasing_customer_percent": "7.9",
+        "dollars_per_eligible_customer": "3.98"
+      },
+      {
+        "age_period": 7,
+        "first_day_after_entry": 210,
+        "last_day_after_entry": 239,
+        "eligible_customers": 23570,
+        "transaction_rows": 2343,
+        "purchasing_customers": 1772,
+        "customers_with_positive_dollars": 1772,
+        "reported_dollars": "84962.66",
+        "purchasing_customer_percent": "7.5",
+        "dollars_per_eligible_customer": "3.60"
+      },
+      {
+        "age_period": 8,
+        "first_day_after_entry": 240,
+        "last_day_after_entry": 269,
+        "eligible_customers": 23570,
+        "transaction_rows": 2624,
+        "purchasing_customers": 1930,
+        "customers_with_positive_dollars": 1930,
+        "reported_dollars": "101734.74",
+        "purchasing_customer_percent": "8.2",
+        "dollars_per_eligible_customer": "4.32"
+      },
+      {
+        "age_period": 9,
+        "first_day_after_entry": 270,
+        "last_day_after_entry": 299,
+        "eligible_customers": 23570,
+        "transaction_rows": 2544,
+        "purchasing_customers": 1824,
+        "customers_with_positive_dollars": 1824,
+        "reported_dollars": "96452.69",
+        "purchasing_customer_percent": "7.7",
+        "dollars_per_eligible_customer": "4.09"
+      },
+      {
+        "age_period": 10,
+        "first_day_after_entry": 300,
+        "last_day_after_entry": 329,
+        "eligible_customers": 23570,
+        "transaction_rows": 2325,
+        "purchasing_customers": 1721,
+        "customers_with_positive_dollars": 1721,
+        "reported_dollars": "90425.65",
+        "purchasing_customer_percent": "7.3",
+        "dollars_per_eligible_customer": "3.84"
+      },
+      {
+        "age_period": 11,
+        "first_day_after_entry": 330,
+        "last_day_after_entry": 359,
+        "eligible_customers": 23570,
+        "transaction_rows": 2136,
+        "purchasing_customers": 1622,
+        "customers_with_positive_dollars": 1622,
+        "reported_dollars": "80682.50",
+        "purchasing_customer_percent": "6.9",
+        "dollars_per_eligible_customer": "3.42"
+      },
+      {
+        "age_period": 12,
+        "first_day_after_entry": 360,
+        "last_day_after_entry": 389,
+        "eligible_customers": 23570,
+        "transaction_rows": 2283,
+        "purchasing_customers": 1741,
+        "customers_with_positive_dollars": 1739,
+        "reported_dollars": "89983.28",
+        "purchasing_customer_percent": "7.4",
+        "dollars_per_eligible_customer": "3.82"
+      },
+      {
+        "age_period": 13,
+        "first_day_after_entry": 390,
+        "last_day_after_entry": 419,
+        "eligible_customers": 23570,
+        "transaction_rows": 2283,
+        "purchasing_customers": 1724,
+        "customers_with_positive_dollars": 1724,
+        "reported_dollars": "83562.62",
+        "purchasing_customer_percent": "7.3",
+        "dollars_per_eligible_customer": "3.55"
+      },
+      {
+        "age_period": 14,
+        "first_day_after_entry": 420,
+        "last_day_after_entry": 449,
+        "eligible_customers": 23570,
+        "transaction_rows": 2063,
+        "purchasing_customers": 1560,
+        "customers_with_positive_dollars": 1559,
+        "reported_dollars": "75142.03",
+        "purchasing_customer_percent": "6.6",
+        "dollars_per_eligible_customer": "3.19"
+      },
+      {
+        "age_period": 15,
+        "first_day_after_entry": 450,
+        "last_day_after_entry": 479,
+        "eligible_customers": 18841,
+        "transaction_rows": 1554,
+        "purchasing_customers": 1185,
+        "customers_with_positive_dollars": 1184,
+        "reported_dollars": "56014.40",
+        "purchasing_customer_percent": "6.3",
+        "dollars_per_eligible_customer": "2.97"
+      },
+      {
+        "age_period": 16,
+        "first_day_after_entry": 480,
+        "last_day_after_entry": 509,
+        "eligible_customers": 9758,
+        "transaction_rows": 918,
+        "purchasing_customers": 646,
+        "customers_with_positive_dollars": 646,
+        "reported_dollars": "35605.27",
+        "purchasing_customer_percent": "6.6",
+        "dollars_per_eligible_customer": "3.65"
+      },
+      {
+        "age_period": 17,
+        "first_day_after_entry": 510,
+        "last_day_after_entry": 539,
+        "eligible_customers": 1574,
+        "transaction_rows": 146,
+        "purchasing_customers": 107,
+        "customers_with_positive_dollars": 107,
+        "reported_dollars": "4831.10",
+        "purchasing_customer_percent": "6.8",
+        "dollars_per_eligible_customer": "3.07"
+      }
+    ],
+    "source_row_partition": {
+      "full_window_transaction_rows": 68776,
+      "full_window_reported_dollars": "2468094.71",
+      "partial_window_transaction_rows": 883,
+      "partial_window_reported_dollars": "32220.92"
+    },
+    "interpretation": "Age zero includes the first recorded purchase, so its purchasing share is 100% by definition. Partial-window rows remain in overall and calendar totals but are excluded from like-aged measures."
+  },
+  "repeat_purchasing": {
+    "definition": "at least one recorded transaction on a date after the first recorded date; no later-date row by cutoff is not permanent churn",
+    "later_date_repeaters": 11516,
+    "later_date_repeat_percent": "48.9",
+    "no_later_date_observed_by_cutoff": 12054,
+    "positive_dollar_later_date_repeaters": 11515,
+    "positive_dollar_later_date_repeat_percent": "48.9",
+    "later_date_only_zero_dollar_repeaters": 1,
+    "customers_with_multiple_entry_date_rows": 351,
+    "customers_with_multiple_rows_but_no_later_date": 146,
+    "entry_date_transaction_rows": 23951,
+    "entry_date_reported_dollars": "784560.61",
+    "later_date_reported_dollars": "1715755.02",
+    "time_to_first_later_date_days_among_repeaters": {
+      "minimum": 1,
+      "p25_nearest_rank": 18,
+      "median": 57.0,
+      "p75_nearest_rank": 171,
+      "p90_nearest_rank": 307,
+      "maximum": 533
+    },
+    "cumulative_repeat_horizons": [
+      {
+        "days_after_entry_inclusive": 30,
+        "eligible_customers": 23570,
+        "later_date_repeaters": 4115,
+        "repeat_percent": "17.5"
+      },
+      {
+        "days_after_entry_inclusive": 60,
+        "eligible_customers": 23570,
+        "later_date_repeaters": 5929,
+        "repeat_percent": "25.2"
+      },
+      {
+        "days_after_entry_inclusive": 90,
+        "eligible_customers": 23570,
+        "later_date_repeaters": 6887,
+        "repeat_percent": "29.2"
+      }
+    ]
+  },
+  "customer_distribution": {
+    "definition": "per-customer totals over observed histories of unequal length; all customers and recorded rows retained",
+    "top_customer_ranking": "rank customers by sum of all reported transaction dollars through June 30, 1998, descending; not by transaction count",
+    "customers_with_zero_reported_dollars": 68,
+    "customers_with_one_transaction_row": 11908,
+    "customers_with_two_or_more_transaction_rows": 11662,
+    "reported_dollars_per_customer": {
+      "p25_nearest_rank": "19.97",
+      "median": "43.395",
+      "p75_nearest_rank": "106.49",
+      "p90_nearest_rank": "242.33",
+      "p99_nearest_rank": "919.24",
+      "maximum": "13990.93"
+    },
+    "transaction_rows_per_customer": {
+      "median": 1.0,
+      "p90_nearest_rank": 6,
+      "p99_nearest_rank": 20,
+      "maximum": 217
+    },
+    "distinct_transaction_dates_per_customer": {
+      "median": 1.0,
+      "p90_nearest_rank": 6,
+      "maximum": 171
+    },
+    "top_customer_shares": [
+      {
+        "top_customer_percent": 1,
+        "customer_count_rounded_up": 236,
+        "minimum_observed_customer_dollars_in_group": "919.24",
+        "reported_dollars": "396944.17",
+        "share_of_all_reported_dollars_percent": "15.9",
+        "transaction_rows": 6324,
+        "largest_row_per_customer_dollars": "52018.58"
+      },
+      {
+        "top_customer_percent": 10,
+        "customer_count_rounded_up": 2357,
+        "minimum_observed_customer_dollars_in_group": "242.35",
+        "reported_dollars": "1273728.95",
+        "share_of_all_reported_dollars_percent": "50.9",
+        "transaction_rows": 25895,
+        "largest_row_per_customer_dollars": "287609.60"
+      }
+    ],
+    "largest_transaction_rows": {
+      "row_count_top_one_percent_rounded_up": 697,
+      "reported_dollars": "176850.01",
+      "share_of_all_reported_dollars_percent": "7.1",
+      "largest_single_row_dollars": "1286.01"
+    }
+  },
+  "revenue_timing": {
+    "definition": "elapsed days from first recorded date; descriptive observed-dollar split, including partial age windows, not like-aged rates",
+    "periods": [
+      {
+        "age_bucket": "day 0",
+        "transaction_rows": 23951,
+        "purchasing_customers": 23570,
+        "reported_dollars": "784560.61",
+        "share_of_all_reported_dollars_percent": "31.4"
+      },
+      {
+        "age_bucket": "days 1-30",
+        "transaction_rows": 5806,
+        "purchasing_customers": 4115,
+        "reported_dollars": "212089.77",
+        "share_of_all_reported_dollars_percent": "8.5"
+      },
+      {
+        "age_bucket": "days 31-90",
+        "transaction_rows": 7186,
+        "purchasing_customers": 4504,
+        "reported_dollars": "268599.37",
+        "share_of_all_reported_dollars_percent": "10.7"
+      },
+      {
+        "age_bucket": "days 91-180",
+        "transaction_rows": 8247,
+        "purchasing_customers": 4644,
+        "reported_dollars": "312184.99",
+        "share_of_all_reported_dollars_percent": "12.5"
+      },
+      {
+        "age_bucket": "days 181-365",
+        "transaction_rows": 14790,
+        "purchasing_customers": 6134,
+        "reported_dollars": "564083.00",
+        "share_of_all_reported_dollars_percent": "22.6"
+      },
+      {
+        "age_bucket": "days 366+",
+        "transaction_rows": 9679,
+        "purchasing_customers": 4528,
+        "reported_dollars": "358797.89",
+        "share_of_all_reported_dollars_percent": "14.4"
+      }
+    ]
+  },
+  "top_customer_timing": {
+    "definition": "customers ranked by all reported dollars through cutoff; groups describe observed high spenders and must not be treated as known future types",
+    "groups": [
+      {
+        "customer_group": "top 1%",
+        "customers": 236,
+        "transaction_rows": 6324,
+        "reported_dollars": "396944.17",
+        "share_of_all_reported_dollars_percent": "15.9",
+        "entry_date_dollars": "23197.25",
+        "entry_date_share_of_group_percent": "5.8",
+        "later_date_dollars": "373746.92",
+        "after_day_90_dollars": "285745.07",
+        "after_day_90_share_of_group_percent": "72.0"
+      },
+      {
+        "customer_group": "next 9%",
+        "customers": 2121,
+        "transaction_rows": 19571,
+        "reported_dollars": "876784.78",
+        "share_of_all_reported_dollars_percent": "35.1",
+        "entry_date_dollars": "133590.92",
+        "entry_date_share_of_group_percent": "15.2",
+        "later_date_dollars": "743193.86",
+        "after_day_90_dollars": "547000.48",
+        "after_day_90_share_of_group_percent": "62.4"
+      },
+      {
+        "customer_group": "bottom 90%",
+        "customers": 21213,
+        "transaction_rows": 43764,
+        "reported_dollars": "1226586.68",
+        "share_of_all_reported_dollars_percent": "49.1",
+        "entry_date_dollars": "627772.44",
+        "entry_date_share_of_group_percent": "51.2",
+        "later_date_dollars": "598814.24",
+        "after_day_90_dollars": "402320.33",
+        "after_day_90_share_of_group_percent": "32.8"
+      }
+    ]
+  }
+}
