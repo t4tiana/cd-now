@@ -1,3 +1,7 @@
 # Keep project documentation and Python source in LF on every platform.
 *.md text eol=lf
 *.py text eol=lf
+
+# Preserve the supplied transaction file's bytes across operating systems.
+# Its SHA-256 manifest records CRLF line endings.
+CDNOW_data/CDNOW_master.txt -text
