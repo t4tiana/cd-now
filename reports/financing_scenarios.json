@@ -1,0 +1,743 @@
+{
+  "status": "illustrative; downside and advance not selected",
+  "decision_date": "1998-07-15",
+  "source_manifest": {
+    "path": "CDNOW_data/CDNOW_master.txt",
+    "size_bytes": 1950452,
+    "line_count": 69659,
+    "sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07"
+  },
+  "example_cohort": "Q4 1998 first-purchase IDs; hypothetical same 23,570-person scale as Q1 1997",
+  "entry_assumption": "first purchases evenly distributed across October 1\u2013December 31, 1998",
+  "revenue_assumption": "Q1 1997 observed per-original-customer daily age profile through day 449; three-window declining extension thereafter; no explicit seasonality, mix or price change",
+  "stress_assumption": "P3.4 anchor factor scales all age-90-and-later daily dollars; first 90 days stay at Q1 1997 levels. This future-cohort translation is illustrative and may understate downside to early dollars.",
+  "repayment_assumption": "each calendar day's eligible, collected revenue equals the selected fraction of reported dollars and remits 50% immediately; cumulative repayment stops at 1.2 times advance",
+  "forecast_end": "2000-12-31",
+  "unmodeled_after_end_is_not_zero": true,
+  "scenarios": {
+    "provisional_base": {
+      "factor_from_p3_4": 1.0,
+      "all_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 3155789.02,
+        "eligible_dollars_through_2000": 3155789.02,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062614.61,
+          "1999Q1": 362387.27,
+          "1999Q2": 294652.74,
+          "1999Q3": 288386.6,
+          "1999Q4": 262744.77,
+          "2000Q1": 240240.36,
+          "2000Q2": 229497.38,
+          "2000Q3": 215391.65,
+          "2000Q4": 199873.63
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-11-26",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-01-30",
+            "repayment_by_quarter": {
+              "1998Q4": 531307.3,
+              "1999Q1": 68692.7,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1200000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "2000-02-18",
+            "repayment_by_quarter": {
+              "1998Q4": 531307.3,
+              "1999Q1": 181193.63,
+              "1999Q2": 147326.37,
+              "1999Q3": 144193.3,
+              "1999Q4": 131372.39,
+              "2000Q1": 64607.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1577894.51,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 531307.3,
+              "1999Q1": 181193.63,
+              "1999Q2": 147326.37,
+              "1999Q3": 144193.3,
+              "1999Q4": 131372.39,
+              "2000Q1": 120120.18,
+              "2000Q2": 114748.69,
+              "2000Q3": 107695.83,
+              "2000Q4": 99936.82
+            }
+          }
+        ]
+      },
+      "80_percent_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 3155789.02,
+        "eligible_dollars_through_2000": 2524631.22,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062614.61,
+          "1999Q1": 362387.27,
+          "1999Q2": 294652.74,
+          "1999Q3": 288386.6,
+          "1999Q4": 262744.77,
+          "2000Q1": 240240.36,
+          "2000Q2": 229497.38,
+          "2000Q3": 215391.65,
+          "2000Q4": 199873.63
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-12-08",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-04-22",
+            "repayment_by_quarter": {
+              "1998Q4": 425045.84,
+              "1999Q1": 144954.91,
+              "1999Q2": 29999.25,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1200000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "2000-10-20",
+            "repayment_by_quarter": {
+              "1998Q4": 425045.84,
+              "1999Q1": 144954.91,
+              "1999Q2": 117861.1,
+              "1999Q3": 115354.64,
+              "1999Q4": 105097.91,
+              "2000Q1": 96096.14,
+              "2000Q2": 91798.95,
+              "2000Q3": 86156.66,
+              "2000Q4": 17633.84
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1262315.61,
+            "unrepaid_principal_at_end": 237684.39,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 425045.84,
+              "1999Q1": 144954.91,
+              "1999Q2": 117861.1,
+              "1999Q3": 115354.64,
+              "1999Q4": 105097.91,
+              "2000Q1": 96096.14,
+              "2000Q2": 91798.95,
+              "2000Q3": 86156.66,
+              "2000Q4": 79949.45
+            }
+          }
+        ]
+      }
+    },
+    "early_repeat_20pct": {
+      "factor_from_p3_4": 0.895588,
+      "all_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 2958036.42,
+        "eligible_dollars_through_2000": 2958036.42,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062602.63,
+          "1999Q1": 345361.59,
+          "1999Q2": 263887.46,
+          "1999Q3": 258275.58,
+          "1999Q4": 235311.07,
+          "2000Q1": 215156.38,
+          "2000Q2": 205535.1,
+          "2000Q3": 192902.18,
+          "2000Q4": 179004.43
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-11-26",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-01-30",
+            "repayment_by_quarter": {
+              "1998Q4": 531301.32,
+              "1999Q1": 68698.68,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1200000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "2000-04-09",
+            "repayment_by_quarter": {
+              "1998Q4": 531301.32,
+              "1999Q1": 172680.8,
+              "1999Q2": 131943.73,
+              "1999Q3": 129137.79,
+              "1999Q4": 117655.53,
+              "2000Q1": 107578.19,
+              "2000Q2": 9702.65,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1479018.21,
+            "unrepaid_principal_at_end": 20981.79,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 531301.32,
+              "1999Q1": 172680.8,
+              "1999Q2": 131943.73,
+              "1999Q3": 129137.79,
+              "1999Q4": 117655.53,
+              "2000Q1": 107578.19,
+              "2000Q2": 102767.55,
+              "2000Q3": 96451.09,
+              "2000Q4": 89502.21
+            }
+          }
+        ]
+      },
+      "80_percent_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 2958036.42,
+        "eligible_dollars_through_2000": 2366429.14,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062602.63,
+          "1999Q1": 345361.59,
+          "1999Q2": 263887.46,
+          "1999Q3": 258275.58,
+          "1999Q4": 235311.07,
+          "2000Q1": 215156.38,
+          "2000Q2": 205535.1,
+          "2000Q3": 192902.18,
+          "2000Q4": 179004.43
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-12-08",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-05-01",
+            "repayment_by_quarter": {
+              "1998Q4": 425041.05,
+              "1999Q1": 138144.64,
+              "1999Q2": 36814.31,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1183214.57,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 425041.05,
+              "1999Q1": 138144.64,
+              "1999Q2": 105554.98,
+              "1999Q3": 103310.23,
+              "1999Q4": 94124.43,
+              "2000Q1": 86062.55,
+              "2000Q2": 82214.04,
+              "2000Q3": 77160.87,
+              "2000Q4": 71601.77
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1183214.57,
+            "unrepaid_principal_at_end": 316785.43,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 425041.05,
+              "1999Q1": 138144.64,
+              "1999Q2": 105554.98,
+              "1999Q3": 103310.23,
+              "1999Q4": 94124.43,
+              "2000Q1": 86062.55,
+              "2000Q2": 82214.04,
+              "2000Q3": 77160.87,
+              "2000Q4": 71601.77
+            }
+          }
+        ]
+      }
+    },
+    "top_25_spend_20pct": {
+      "factor_from_p3_4": 0.873537,
+      "all_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 2916272.61,
+        "eligible_dollars_through_2000": 2916272.61,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062600.11,
+          "1999Q1": 341765.9,
+          "1999Q2": 257390.07,
+          "1999Q3": 251916.36,
+          "1999Q4": 229517.28,
+          "2000Q1": 209858.84,
+          "2000Q2": 200474.46,
+          "2000Q3": 188152.58,
+          "2000Q4": 174597.01
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-11-26",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-01-30",
+            "repayment_by_quarter": {
+              "1998Q4": 531300.05,
+              "1999Q1": 68699.95,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1200000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "2000-04-21",
+            "repayment_by_quarter": {
+              "1998Q4": 531300.05,
+              "1999Q1": 170882.95,
+              "1999Q2": 128695.04,
+              "1999Q3": 125958.18,
+              "1999Q4": 114758.64,
+              "2000Q1": 104929.42,
+              "2000Q2": 23475.72,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1458136.31,
+            "unrepaid_principal_at_end": 41863.69,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 531300.05,
+              "1999Q1": 170882.95,
+              "1999Q2": 128695.04,
+              "1999Q3": 125958.18,
+              "1999Q4": 114758.64,
+              "2000Q1": 104929.42,
+              "2000Q2": 100237.23,
+              "2000Q3": 94076.29,
+              "2000Q4": 87298.51
+            }
+          }
+        ]
+      },
+      "80_percent_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 2916272.61,
+        "eligible_dollars_through_2000": 2333018.09,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062600.11,
+          "1999Q1": 341765.9,
+          "1999Q2": 257390.07,
+          "1999Q3": 251916.36,
+          "1999Q4": 229517.28,
+          "2000Q1": 209858.84,
+          "2000Q2": 200474.46,
+          "2000Q3": 188152.58,
+          "2000Q4": 174597.01
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-12-08",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-05-03",
+            "repayment_by_quarter": {
+              "1998Q4": 425040.04,
+              "1999Q1": 136706.36,
+              "1999Q2": 38253.6,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1166509.05,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 425040.04,
+              "1999Q1": 136706.36,
+              "1999Q2": 102956.03,
+              "1999Q3": 100766.54,
+              "1999Q4": 91806.91,
+              "2000Q1": 83943.54,
+              "2000Q2": 80189.78,
+              "2000Q3": 75261.03,
+              "2000Q4": 69838.81
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1166509.05,
+            "unrepaid_principal_at_end": 333490.95,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 425040.04,
+              "1999Q1": 136706.36,
+              "1999Q2": 102956.03,
+              "1999Q3": 100766.54,
+              "1999Q4": 91806.91,
+              "2000Q1": 83943.54,
+              "2000Q2": 80189.78,
+              "2000Q3": 75261.03,
+              "2000Q4": 69838.81
+            }
+          }
+        ]
+      }
+    },
+    "two_window_decay": {
+      "factor_from_p3_4": null,
+      "all_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 3072929.02,
+        "eligible_dollars_through_2000": 3072929.02,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062614.61,
+          "1999Q1": 362387.27,
+          "1999Q2": 294652.74,
+          "1999Q3": 288386.6,
+          "1999Q4": 262700.36,
+          "2000Q1": 231753.67,
+          "2000Q2": 210143.28,
+          "2000Q3": 190170.21,
+          "2000Q4": 170120.29
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-11-26",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-01-30",
+            "repayment_by_quarter": {
+              "1998Q4": 531307.3,
+              "1999Q1": 68692.7,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1200000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "2000-02-19",
+            "repayment_by_quarter": {
+              "1998Q4": 531307.3,
+              "1999Q1": 181193.63,
+              "1999Q2": 147326.37,
+              "1999Q3": 144193.3,
+              "1999Q4": 131350.18,
+              "2000Q1": 64629.21,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1536464.51,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 531307.3,
+              "1999Q1": 181193.63,
+              "1999Q2": 147326.37,
+              "1999Q3": 144193.3,
+              "1999Q4": 131350.18,
+              "2000Q1": 115876.84,
+              "2000Q2": 105071.64,
+              "2000Q3": 95085.11,
+              "2000Q4": 85060.14
+            }
+          }
+        ]
+      },
+      "80_percent_reported_dollars_eligible": {
+        "reported_dollars_through_2000": 3072929.02,
+        "eligible_dollars_through_2000": 2458343.22,
+        "forecast_reported_dollars_by_quarter": {
+          "1998Q4": 1062614.61,
+          "1999Q1": 362387.27,
+          "1999Q2": 294652.74,
+          "1999Q3": 288386.6,
+          "1999Q4": 262700.36,
+          "2000Q1": 231753.67,
+          "2000Q2": 210143.28,
+          "2000Q3": 190170.21,
+          "2000Q4": 170120.29
+        },
+        "illustrative_advances": [
+          {
+            "advance": 250000,
+            "eligible_revenue_needed_to_cap": 600000.0,
+            "capped_repayments_through_2000": 300000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1998-12-08",
+            "repayment_by_quarter": {
+              "1998Q4": 300000.0,
+              "1999Q1": 0.0,
+              "1999Q2": 0.0,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 500000,
+            "eligible_revenue_needed_to_cap": 1200000.0,
+            "capped_repayments_through_2000": 600000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "1999-04-22",
+            "repayment_by_quarter": {
+              "1998Q4": 425045.84,
+              "1999Q1": 144954.91,
+              "1999Q2": 29999.25,
+              "1999Q3": 0.0,
+              "1999Q4": 0.0,
+              "2000Q1": 0.0,
+              "2000Q2": 0.0,
+              "2000Q3": 0.0,
+              "2000Q4": 0.0
+            }
+          },
+          {
+            "advance": 1000000,
+            "eligible_revenue_needed_to_cap": 2400000.0,
+            "capped_repayments_through_2000": 1200000.0,
+            "unrepaid_principal_at_end": 0,
+            "cap_date": "2000-11-21",
+            "repayment_by_quarter": {
+              "1998Q4": 425045.84,
+              "1999Q1": 144954.91,
+              "1999Q2": 117861.1,
+              "1999Q3": 115354.64,
+              "1999Q4": 105080.14,
+              "2000Q1": 92701.47,
+              "2000Q2": 84057.31,
+              "2000Q3": 76068.08,
+              "2000Q4": 38876.51
+            }
+          },
+          {
+            "advance": 1500000,
+            "eligible_revenue_needed_to_cap": 3600000.0,
+            "capped_repayments_through_2000": 1229171.61,
+            "unrepaid_principal_at_end": 270828.39,
+            "cap_date": null,
+            "repayment_by_quarter": {
+              "1998Q4": 425045.84,
+              "1999Q1": 144954.91,
+              "1999Q2": 117861.1,
+              "1999Q3": 115354.64,
+              "1999Q4": 105080.14,
+              "2000Q1": 92701.47,
+              "2000Q2": 84057.31,
+              "2000Q3": 76068.08,
+              "2000Q4": 68048.11
+            }
+          }
+        ]
+      }
+    }
+  }
+}

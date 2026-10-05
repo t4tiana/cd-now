@@ -1,0 +1,49 @@
+{
+  "decision_date": "1998-07-15",
+  "comparison_start": "1998-10-01",
+  "comparison_end": "1999-12-22",
+  "days": 447,
+  "advance": 1200000,
+  "cohort_assumptions": {
+    "first_purchasers": 40000,
+    "behavior_case": "top_25_spend_20pct",
+    "eligible_collected_fraction": 0.8,
+    "same_day_remittance": true,
+    "payment_share": 0.5,
+    "cap_multiple": 1.2
+  },
+  "cohort_reported_dollars_through_2000": 4949126.2,
+  "assumed_eligible_collected_dollars_through_2000": 3959300.96,
+  "capped_cohort_repayments_by_comparison_end": 1440000.0,
+  "cohort_gross_gain_without_reinvestment": 240000.0,
+  "treasury_proxy_annual_rate": 0.0534,
+  "treasury_terminal_value_flat_rate_assumption": 1278940.44,
+  "treasury_gain_flat_rate_assumption": 78940.44,
+  "cohort_repayments_reinvested_at_same_rate": 1502356.93,
+  "cohort_terminal_gain_with_reinvestment": 302356.93,
+  "cohort_excess_terminal_value_over_treasury": 223416.5,
+  "successful_collection_probability_needed_if_otherwise_total_loss": 0.8513,
+  "same_23570_size_repayments_through_2000": 1166509.05,
+  "doubled_advance_2400000_cases": {
+    "40000": {
+      "forecast_reported_dollars_through_2000": 4949126.2,
+      "assumed_eligible_collected_dollars_through_2000": 3959300.96,
+      "repayments_through_2000": 1979650.48,
+      "cap_date": null
+    },
+    "62000": {
+      "forecast_reported_dollars_through_2000": 7671145.61,
+      "assumed_eligible_collected_dollars_through_2000": 6136916.49,
+      "repayments_through_2000": 2880000.0,
+      "cap_date": "2000-09-28"
+    },
+    "80000": {
+      "forecast_reported_dollars_through_2000": 9898252.4,
+      "assumed_eligible_collected_dollars_through_2000": 7918601.92,
+      "repayments_through_2000": 2880000.0,
+      "cap_date": "1999-12-22"
+    }
+  },
+  "rate_source": "Federal Reserve H.15 release July 13, 1998; 1-year Treasury constant-maturity weekly average for July 6\u201310, 1998",
+  "rate_is_quoted_yield_not_a_guaranteed_15_month_investment": true
+}

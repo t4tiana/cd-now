@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 520" role="img" aria-labelledby="title desc">
+<title id="title">Modeled investor repayments on a 1.2 million dollar advance</title>
+<desc id="desc">Quarter-end cumulative repayments for two hypothetical Q4 1998 cohorts. The 40,000-buyer case reaches the 1.44 million dollar cap by December 1999. The combined downside reaches 1.041 million dollars by December 2000, below 1.2 million dollar principal. Both assume immediate collection and remittance.</desc>
+<rect width="1040" height="520" fill="#ffffff"/>
+<text x="100.0" y="34.0" text-anchor="start" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#17253d">Repayment depends on more than repeat sales</text>
+<text x="100.0" y="60.0" text-anchor="start" font-family="Arial,sans-serif" font-size="14" font-weight="400" fill="#475569">Illustrative $1.2m advance for Q4 1998 first purchasers; quarterly cumulative payments</text>
+<line x1="100" y1="392.0" x2="850" y2="392.0" stroke="#e0e7ef" stroke-dasharray="none"/>
+<text x="88.0" y="397.0" text-anchor="end" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#475569">$0.00m</text>
+<line x1="100" y1="316.0" x2="850" y2="316.0" stroke="#e0e7ef" stroke-dasharray="none"/>
+<text x="88.0" y="321.0" text-anchor="end" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#475569">$0.40m</text>
+<line x1="100" y1="240.0" x2="850" y2="240.0" stroke="#e0e7ef" stroke-dasharray="none"/>
+<text x="88.0" y="245.0" text-anchor="end" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#475569">$0.80m</text>
+<line x1="100" y1="164.0" x2="850" y2="164.0" stroke="#b1bccb" stroke-dasharray="5 4"/>
+<text x="88.0" y="169.0" text-anchor="end" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#475569">$1.20m</text>
+<line x1="100" y1="118.4" x2="850" y2="118.4" stroke="#b1bccb" stroke-dasharray="5 4"/>
+<text x="88.0" y="123.4" text-anchor="end" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#475569">$1.44m</text>
+<text x="183.0" y="417.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#334155">Dec 1998</text>
+<text x="348.2" y="417.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#334155">Jun 1999</text>
+<text x="516.1" y="417.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#334155">Dec 1999</text>
+<text x="682.1" y="417.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#334155">Jun 2000</text>
+<text x="850.0" y="417.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#334155">Dec 2000</text>
+<path d="M100.0,392.0 L183.0,254.9 L265.1,210.9 L348.2,177.7 L432.1,145.2 L516.1,118.4 L599.1,118.4 L682.1,118.4 L766.1,118.4 L850.0,118.4" fill="none" stroke="#147d78" stroke-width="4"/>
+<path d="M100.0,392.0 L183.0,326.5 L265.1,303.8 L348.2,285.2 L432.1,266.9 L516.1,250.2 L599.1,235.0 L682.1,220.5 L766.1,206.8 L850.0,194.2" fill="none" stroke="#c96b24" stroke-width="4"/>
+<text x="865.0" y="122.4" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#147d78">Cap $1.44m</text>
+<text x="865.0" y="168.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#475569">Principal $1.20m</text>
+<text x="865.0" y="198.2" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#c96b24">Stress $1.04m</text>
+<line x1="100" y1="449" x2="132" y2="449" stroke="#147d78" stroke-width="4"/>
+<text x="141.0" y="454.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#334155">40,000 buyers; 80% eligible and collected; later-spend downside</text>
+<line x1="100" y1="473" x2="132" y2="473" stroke="#c96b24" stroke-width="4"/>
+<text x="141.0" y="478.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#334155">Combined downside: 30,000 buyers; lower early/later spend; 60% eligible</text>
+<text x="100.0" y="505.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" font-weight="400" fill="#475569">Forecast scenarios, not observed cash. Payments = 50% of assumed eligible collections, capped at 1.2× advance.</text>
+</svg>

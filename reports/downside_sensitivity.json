@@ -1,0 +1,533 @@
+{
+  "status": "illustrative grid; 20% early-repeat and early-top-quarter cases used separately as decision gates",
+  "historical_decision_date": "1998-07-15",
+  "observed_cutoff": "1998-06-30",
+  "source_manifest": {
+    "path": "CDNOW_data/CDNOW_master.txt",
+    "size_bytes": 1950452,
+    "line_count": 69659,
+    "sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07"
+  },
+  "population": "Q1 1997 first-purchase cohort; 23,570 customer IDs",
+  "forecast_object": "remaining reported transaction dollars for this observed cohort",
+  "baseline": "provisional three-window declining extension",
+  "baseline_periods": {
+    "main_july_1998_june_1999": {
+      "forecast_reported_dollars": 825907.25,
+      "forecast_dollars_per_original_customer": 35.04,
+      "quarters": [
+        {
+          "calendar_quarter": "1998Q3",
+          "forecast_reported_dollars": 231802.71
+        },
+        {
+          "calendar_quarter": "1998Q4",
+          "forecast_reported_dollars": 215101.45
+        },
+        {
+          "calendar_quarter": "1999Q1",
+          "forecast_reported_dollars": 195421.62
+        },
+        {
+          "calendar_quarter": "1999Q2",
+          "forecast_reported_dollars": 183581.47
+        }
+      ]
+    },
+    "separate_tail_july_1999_june_2000": {
+      "forecast_reported_dollars": 615338.47,
+      "forecast_dollars_per_original_customer": 26.11,
+      "quarters": [
+        {
+          "calendar_quarter": "1999Q3",
+          "forecast_reported_dollars": 172297.51
+        },
+        {
+          "calendar_quarter": "1999Q4",
+          "forecast_reported_dollars": 159884.25
+        },
+        {
+          "calendar_quarter": "2000Q1",
+          "forecast_reported_dollars": 146811.63
+        },
+        {
+          "calendar_quarter": "2000Q2",
+          "forecast_reported_dollars": 136345.09
+        }
+      ]
+    }
+  },
+  "anchor": {
+    "customer_age_days": "270-449; fully observed for all original customers",
+    "observed_reported_dollars": "516248.77",
+    "early_repeat_customers": 6864,
+    "early_repeat_share_percent": 29.1,
+    "repeat_group_anchor_dollars_per_customer": "49.73",
+    "no_repeat_group_anchor_dollars_per_customer": "10.47",
+    "high_spender_groups": {
+      "top_25_percent": {
+        "customers": 5892,
+        "rank_rule": "first-90-day reported dollars descending; customer ID ascending breaks ties",
+        "observed_anchor_days_270_449_dollars": "326431.87",
+        "share_of_all_anchor_dollars_percent": 63.2,
+        "lowest_included_first_90_day_dollars": "59.70"
+      },
+      "top_10_percent": {
+        "customers": 2357,
+        "rank_rule": "first-90-day reported dollars descending; customer ID ascending breaks ties",
+        "observed_anchor_days_270_449_dollars": "206591.71",
+        "share_of_all_anchor_dollars_percent": 40.0,
+        "lowest_included_first_90_day_dollars": "113.52"
+      }
+    }
+  },
+  "method": "Each stress changes one anchor component, then multiplies every provisional forecast quarter by the same resulting factor. The early-repeat case transfers removed customers to the no-early-repeat group and holds each group's observed anchor rate fixed. The high-spender cases reduce only that group's forecast contribution. Other assumptions and timing shape are held fixed.",
+  "limits": "Groups use days 0-89 information unavailable at initial funding. Anchor group shares may change at older customer ages. Constant factors do not test a change in forecast decay or calendar timing. Cases are separate, not additive, and are not probabilities, floors, eligible repayment revenue, or cash receipts.",
+  "cases": [
+    {
+      "driver": "early_repeat_prevalence",
+      "assumed_relative_reduction": "0.10",
+      "implied_repeat_share_of_original_cohort_percent": 26.2,
+      "forecast_factor": 0.947794,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "782789.88",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "219701.20"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "203871.85"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "185219.43"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "173997.40"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "583214.07",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "163302.54"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "151537.32"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "139147.17"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "129227.05"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "early_repeat_prevalence",
+      "assumed_relative_reduction": "0.20",
+      "implied_repeat_share_of_original_cohort_percent": 23.3,
+      "forecast_factor": 0.895588,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "739672.52",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "207599.70"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "192642.25"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "175017.23"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "164413.34"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "551089.67",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "154307.56"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "143190.39"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "131482.72"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "122109.01"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "early_repeat_prevalence",
+      "assumed_relative_reduction": "0.30",
+      "implied_repeat_share_of_original_cohort_percent": 20.4,
+      "forecast_factor": 0.843382,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "696555.15",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "195498.19"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "181412.65"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "164815.04"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "154829.27"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "518965.27",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "145312.59"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "134843.47"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "123818.26"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "114990.97"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "top_25_percent_future_contribution",
+      "assumed_reduction_to_group_forecast": "0.10",
+      "forecast_factor": 0.936768,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "773683.89",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "217145.48"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "201500.26"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "183064.82"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "171973.34"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "576429.69",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "161402.88"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "149774.53"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "137528.51"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "127723.78"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "top_25_percent_future_contribution",
+      "assumed_reduction_to_group_forecast": "0.20",
+      "forecast_factor": 0.873537,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "721460.53",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "202488.24"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "187899.07"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "170708.01"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "160365.20"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "537520.91",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "150508.25"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "139664.81"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "128245.39"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "119102.48"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "top_25_percent_future_contribution",
+      "assumed_reduction_to_group_forecast": "0.30",
+      "forecast_factor": 0.810305,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "669237.17",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "187831.01"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "174297.88"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "158351.21"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "148757.07"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "498612.14",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "139613.62"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "129555.08"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "118962.27"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "110481.17"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "top_10_percent_future_contribution",
+      "assumed_reduction_to_group_forecast": "0.10",
+      "forecast_factor": 0.959982,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "792856.21",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "222526.46"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "206493.55"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "187601.26"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "176234.93"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "590713.94",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "165402.53"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "153486.02"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "140936.54"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "130888.85"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "top_10_percent_future_contribution",
+      "assumed_reduction_to_group_forecast": "0.20",
+      "forecast_factor": 0.919964,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "759805.17",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "213250.21"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "197885.65"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "179780.91"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "168888.39"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "566089.41",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "158507.55"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "147087.80"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "135061.46"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "125432.61"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "driver": "top_10_percent_future_contribution",
+      "assumed_reduction_to_group_forecast": "0.30",
+      "forecast_factor": 0.879946,
+      "periods": {
+        "main_july_1998_june_1999": {
+          "forecast_reported_dollars": "726754.13",
+          "quarters": [
+            {
+              "calendar_quarter": "1998Q3",
+              "forecast_reported_dollars": "203973.96"
+            },
+            {
+              "calendar_quarter": "1998Q4",
+              "forecast_reported_dollars": "189277.75"
+            },
+            {
+              "calendar_quarter": "1999Q1",
+              "forecast_reported_dollars": "171960.55"
+            },
+            {
+              "calendar_quarter": "1999Q2",
+              "forecast_reported_dollars": "161541.86"
+            }
+          ]
+        },
+        "separate_tail_july_1999_june_2000": {
+          "forecast_reported_dollars": "541464.88",
+          "quarters": [
+            {
+              "calendar_quarter": "1999Q3",
+              "forecast_reported_dollars": "151612.58"
+            },
+            {
+              "calendar_quarter": "1999Q4",
+              "forecast_reported_dollars": "140689.57"
+            },
+            {
+              "calendar_quarter": "2000Q1",
+              "forecast_reported_dollars": "129186.37"
+            },
+            {
+              "calendar_quarter": "2000Q2",
+              "forecast_reported_dollars": "119976.37"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "repayment_eligible_revenue": null
+}

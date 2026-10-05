@@ -2,36 +2,42 @@
 
 ## Evidence and falsification standard
 
-Guide all analysis by the principle: **try to falsify beliefs rather than confirm them**. Treat conclusions as claims to test, not as premises to defend.
+The analysis follows this principle: **try to falsify beliefs rather than confirm them**. Treat conclusions as claims to test, not as premises to defend.
 
 - State material assumptions explicitly and distinguish them from facts directly observed in the data or documented by a source.
 - Support factual claims with evidence. Record enough source information to trace each material claim back to its dataset field, calculation, document, or contemporaneous reference; cite or name that source when presenting the claim.
 - For calculations, make the inputs, definitions, time period, and method clear enough that another reader can reproduce or challenge the result.
 - Actively look for evidence and plausible cases that would weaken or overturn the current interpretation. Include credible alternative explanations and downside scenarios, not only evidence consistent with the preferred conclusion.
 - Label forecasts and inferences as such, show the assumptions they depend on, and avoid presenting them as established facts. If evidence is unavailable or insufficient, say so rather than filling the gap with an unsupported assertion.
-- Keep the historical decision frame: assume the memo is prepared on July 15, 1998. Use external information published by that date and verify each publication date. Do not rely on later publications, including for analytical methods. The 2001 citation in the supplied readme is dataset provenance only, not a source for the memo.
+- Keep the historical decision frame: assume the memo is prepared on July 15, 1998. Use company, market, and case-economics information published by that date and verify each publication date. I clarified that general finance and statistics literature published after the cutoff may be used **for learning and method justification only**; it cannot import later facts or outcomes about CDnow or the case-study market. See the separate [methodology literature note](../docs/methodology_literature.md). The 2001 citation in the supplied readme is dataset provenance only, not a source of CDnow findings for the memo.
+
+### External-source gate
+
+The source notes record each cited publisher, title, available author or newsroom attribution, original publication date, URL, and passage or page supporting the exact claim. Company and market information must have been published by **July 15, 1998**; a URL date, archive date, or financial period end is not enough. Original company disclosures support company figures, and identifiable contemporaneous publications support market context. Third-party estimates remain labeled and separate from the supplied cohort.
+
+Validate each **article's** provenance, not only the host's legitimacy. For a generic byline, uncertain syndication, or unclear original date, seek the original publication or another contemporaneous source; if none can be verified, omit or explicitly qualify the claim. Do not infer an author or wire service. For a claim that could change the investment judgment, corroborate it independently where possible and record any material disagreement. Recheck existing citations before the final recommendation. Later archive metadata can help locate a pre-cutoff source, but later reporting cannot supply CDnow or market facts for the historical judgment. General methodology literature may be newer for learning and method justification.
 
 ## Available evidence and follow-up
 
-Assume the supplied Q1 1997 transaction file is the only CDnow transaction dataset available for this assessment. Proceed with analysis and a conditional recommendation using it; do not wait for further company data. Place missing decision-critical company inputs in a prioritized follow-up list in the written output, stating which conclusion each could change. CDnow disclosures and market sources published by July 15, 1998 may add company-wide context or clearly labeled proxies, but cannot establish this cohort's acquisition costs, margins, refunds, or contractually eligible revenue. Interleave relevant contemporary disclosures with the observed cohort findings while keeping their different scopes explicit. Apply the historical source rule above to all public research.
+The supplied Q1 1997 transaction file is the only CDnow transaction dataset used in this assessment. The recommendation is conditional and lists missing decision-critical company inputs in priority order, with the conclusion each could change. CDnow disclosures and market sources published by July 15, 1998 add company-wide context or clearly labeled proxies, but cannot establish this cohort's acquisition costs, margins, refunds, or contractually eligible revenue. The observed cohort and company-wide disclosures retain distinct scopes.
 
 ## Scope of the investment memo
 
-The interview deliverable should demonstrate judgment with limited evidence, not imitate a legal agreement. Define the proposed cohort and the repayment-base assumption clearly enough to model the 50% share and 1.2x cap. Discuss a contract ambiguity in the memo when it could change the forecast, advance, repayment timing, or recommendation; state the assumption, show a sensitivity if useful, and add the unresolved point to follow-up. Leave detailed clauses and immaterial edge cases out of the main recommendation. Keep the emphasis on revenue quality, future-cohort scenarios, whether and how much to advance, and the missing facts most likely to change that view.
+The investment memo should demonstrate judgment with limited evidence without imitating a legal agreement. Define the proposed cohort and the repayment-base assumption clearly enough to model the 50% share and 1.2x cap. Discuss a contract ambiguity in the memo when it could change the forecast, advance, repayment timing, or recommendation; state the assumption, show a sensitivity if useful, and add the unresolved point to follow-up. Leave detailed clauses and immaterial edge cases out of the main recommendation. Keep the emphasis on revenue quality, future-cohort scenarios, whether and how much to advance, and the missing facts most likely to change that view.
 
 ## Assessment roadmap
 
-The plan has five top-level steps. Step 1 is complete; the detailed tracker for step 2 follows the phase 1 tracker below. Steps 3–5 remain planned work, not conclusions already supported by the file.
+The five assessment phases are complete. Data validation, observed-cohort measurement, forecast sensitivities, financing scenarios, and the committee memo are linked below. The missing company inputs remain decision conditions, not unfinished analysis steps.
 
 1. **Validate and document the data (phase 1, complete).** Use a reproducible pipeline to check record counts, dates, customer IDs, transaction values, repeated-looking rows, and Q1 1997 cohort entry. Record unresolved questions about refunds and customer identity.
-2. **Measure the observed cohort (phase 2).** Calculate revenue by calendar quarter and by time since first recorded purchase, repeat-purchase rates, purchase frequency, and revenue concentration. Account for different entry dates and the June 30, 1998 observation cutoff.
+2. **Measure the observed cohort (phase 2, complete).** Calculate revenue by calendar quarter and by time since first recorded purchase, repeat-purchase rates, purchase frequency, and revenue concentration. Account for different entry dates and the June 30, 1998 observation cutoff. The [numerical verification](../docs/phase2_verification.md) and [historical source audit](../docs/historical_source_audit.md) are recorded; I chose the phase 3 forecast horizon before numerical forecasting began.
 3. **Build an assumption-driven forecast (phase 3).** Show a base case and credible downside cases for this cohort's remaining revenue. Treat applying its patterns to a future quarterly cohort, including cohort size and acquisition mix, as separate assumptions requiring evidence from CDnow.
 4. **Model the financing and request missing inputs (phase 4).** For an advance `A`, reaching the 1.2× repayment cap requires `2.4A` of eligible cohort revenue. Model the 50% share, cap, and repayment timing. Prioritize requests for cohort acquisition spend and channel mix, variable costs and refunds, comparable cohorts, and revenue attribution and collection rules. Make any advance recommendation conditional on the missing inputs and explicit assumptions.
 5. **Write the decision memo (phase 5).** Separate observations, forecasts, and contractual repayment estimates; state the conditional recommendation, proposed advance or decision threshold, and what would change the judgment. Keep the late-1990s frame explicit, including that the analysis does not account for large-scale changes in how media is distributed, shared, or consumed.
 
 ## Phase 1: Validate and document the data
 
-Progress tracker for the first phase of the assessment. The supplied transaction file is the only CDnow dataset available. Update each row when its work starts, reaches an intermediate state, or is complete. Use **Done** only when its completion evidence exists; link to that evidence or explain a blocker in the progress cell. Keep the raw file unchanged. No analysis of cohort behavior should rely on records silently dropped or altered during this phase.
+Completion record for the first phase of the assessment. The supplied transaction file is the only CDnow dataset available. Each completed row links to its evidence. Keep the raw file unchanged. No analysis of cohort behavior should rely on records silently dropped or altered during this phase.
 
 ### 1. Establish the raw-data contract
 
@@ -129,8 +135,59 @@ For example, suppose 100 customers entered early enough to be observed for all o
 | P2.4 | Report revenue and purchasing activity by elapsed time since each customer's first recorded purchase, using a clearly defined age unit and age-zero rule. For each age period, report how many customers had the full chance to be observed through that period; do not treat censored periods as zero spending. | Done — [customer-age output](../reports/cohort_analysis.json) gives 30-day revenue, rows, purchasing customers, rates, and eligible customers; 68,776 rows and $2,468,094.71 fall in complete windows, while 883 rows and $32,220.92 in partial windows remain in full and calendar totals |
 | P2.5 | Measure repeat purchasing with explicit definitions: customers with a purchase on a later date, time to first later-date purchase, and observed transaction-row frequency. Show how same-day rows and zero-dollar entries affect the interpretation; avoid calling nonrepeaters permanently churned. | Done — [repeat output](../reports/cohort_analysis.json) records 11,516 later-date repeaters (48.9%), median 57 days to first later date among those repeaters, 30/60/90-day full-exposure horizons, row/date frequency, same-day rows, and positive-dollar sensitivity; [focused test](../tests/test_cohort_analysis.py) checks the definitions. |
 | P2.6 | Show the distribution and concentration of observed customer dollars and purchases, including zero-revenue customers and a few simple upper-tail shares. Label these as amounts accumulated over unequal follow-up windows, and identify whether large transactions materially drive the results. | Done — [distribution output](../reports/cohort_analysis.json) includes 68 zero-dollar customers, dollar and row-count percentiles, top 1%/10% customer shares (15.9%/50.9%), and largest 1% transaction-row share (7.1%); all are observed-to-cutoff measures over unequal follow-up. [Focused test](../tests/test_cohort_analysis.py) checks zero-dollar inclusion and top ranking. |
-| P2.7 | Produce a compact investment-facing findings note with a few tables or charts, source and calculation references, unresolved data questions, and plausible alternative explanations. Pair relevant results with the [pre-cutoff company and market context](../docs/historical_market_context.md), keeping company-wide disclosures separate from this cohort's measured results. Separate what the cohort shows from what it cannot show about retention causes, future cohorts, margins, or repayment eligibility. | In progress — [readable table view](../reports/cohort_tables.md) is generated from the [JSON output](../reports/cohort_analysis.json), including repeat timing, concentration, and a limited comparison of differently defined 1998 disclosures. The compact final findings note still needs review of unresolved data questions and alternative explanations. |
-| P2.8 | Verify the analysis with focused checks for the age-window denominator, first-purchase assignment, and reconciliation to source totals. Rebuild the outputs from the committed file and document the commands and results. | Not started |
+| P2.7 | Produce a compact investment-facing findings note with a few tables or charts, source and calculation references, unresolved data questions, and plausible alternative explanations. Pair relevant results with the [pre-cutoff company and market context](../docs/historical_market_context.md), keeping company-wide disclosures separate from this cohort's measured results. Separate what the cohort shows from what it cannot show about retention causes, future cohorts, margins, or repayment eligibility. | Done — [findings note](../reports/cohort_findings.md) states the observed result, denominators, alternative explanations, pre-cutoff context, and prioritized questions; it links to the [detailed tables](../reports/cohort_tables.md), [JSON output](../reports/cohort_analysis.json), measurement contract, and [historical source audit](../docs/historical_source_audit.md). The first-90-day diagnostic is linked in P3.3. |
+| P2.8 | Verify the analysis with focused checks for the age-window denominator, first-purchase assignment, and reconciliation to source totals. Rebuild the outputs from the committed file and document the commands and results. | Done — [focused tests](../tests/test_cohort_analysis.py) cover first-date assignment, complete and partial age-window boundaries, source-baseline reconciliation, and rejection of a changed baseline; the [verification record](../docs/phase2_verification.md) gives rebuild commands, results, and matching output hashes. |
+
+## Phase 3: Build an assumption-driven revenue forecast
+
+Use the supplied cohort's overall like-aged revenue pattern for the headline
+forecast. Treat an early-90-day customer cut as a diagnostic that can challenge
+the forecast, not as a hindsight-defined base case. Forecast reported
+transaction dollars separately for the observed cohort's defined future periods and a
+hypothetical future quarterly cohort. Neither is observed revenue or confirmed
+repayment-eligible revenue. The progress table links each completed step to its evidence. The scenario choices that materially change forecast revenue or timing are documented below.
+
+| ID | Task and completion evidence | Progress |
+| --- | --- | --- |
+| P3.1 | Define the forecast contract: distinguish remaining revenue for the observed Q1 1997 cohort from revenue for a hypothetical future quarterly cohort. Agree on the main horizon, treatment beyond it, units, cutoff, and attribution rules. | Done — [forecast contract](../docs/forecast_contract.md) defines both objects, reported-dollar and cohort attribution rules, the June 30, 1998 observation cutoff, July 1998–June 1999 main forecast, a separate second-year tail sensitivity, and Q4 1998 as the example future first-purchase cohort. Revenue beyond displayed horizons remains unmodeled, not assumed zero. |
+| P3.2 | Build a simple base forecast from the like-aged 30-day revenue pattern. Use only fully observable windows for comparisons; address the sharply shrinking denominator in the oldest windows. Provide reproducible code and a table of observed and forecast periods, dollars per original cohort customer, and extension assumptions. | Done — [comparison](../reports/forecast_extensions.md), [code](../scripts/forecast_extensions.py), [output](../reports/forecast_extensions.json), and [lookback sensitivity](../reports/lookback_sensitivity.json) test flat and declining extensions at 2, 3, 4, and 6-window lookbacks. I selected the three-window decline as the working scenario after comparing lookbacks and a trend benchmark; the alternatives remain sensitivities. |
+| P3.3 | Test an early-90-day signal using only purchases visible in those 90 days. Compare later outcomes with equal follow-up and avoid defining groups from full observed histories. Make any decision-useful diagnostic reproducible with denominators and limits. | Done — I chose a positive-dollar later-date repeat by day 89 as the lead signal. The [diagnostic](../reports/early90_diagnostic.md), [code](../scripts/early90_diagnostic.py), and [output](../reports/early90_diagnostic.json) compare days 90–449 at equal follow-up for all 23,570 customers, with spend groups as a secondary check. This observed association is not an at-entry input for funding a future cohort. |
+| P3.4 | Model credible downside cases for weaker repeat buying and a smaller contribution from high spenders. Show which assumption drives each change in a compact sensitivity table for the observed cohort's remaining revenue. Check in before selecting decision-driving case parameters. | Done — [downside note](../reports/downside_sensitivity.md), [code](../scripts/downside_sensitivity.py), and [JSON](../reports/downside_sensitivity.json). I selected 20% early-repeat and early-top-quarter spending reductions as **separate** decision gates. |
+| P3.5 | Transfer the per-customer pattern to a future quarterly cohort only through explicit cohort-size, entry-timing, and channel-mix assumptions. Show separate future-cohort revenue scenarios and timing; identify unvalidated inputs and verify any pre-cutoff external source used. | Done as scenarios — [Q4 purchaser-count note](../reports/future_cohort_size_scenarios.md), [code](../scripts/future_cohort_size_scenarios.py), and [output](../reports/future_cohort_size_scenarios.json) test 40,000, 62,000, and 90,000 first purchasers. Channel mix remains an unvalidated constant, explicitly separated from count and behavior. |
+| P3.6 | Reconcile observed inputs, rerun forecast outputs, and write a short investment-facing forecast note explaining the scenarios and what could change them. Keep acquisition cost, contribution, eligible repayment revenue, and the 50%/1.2× financing calculation for phase 4. | Done — the [committee memo](../final_deliverables/investment_committee_memo.md) and [opportunity-cost note](../reports/opportunity_cost.md) explain decision impact. The source-to-report pipeline, dbt tests, and Python tests were rerun successfully; the [source inventories](../docs/company_financial_evidence_1998.md) and [historical audit](../docs/historical_source_audit.md) record publication dates and claim limits. |
+
+### Selected scenarios and decision limits
+
+I selected the **three-window declining extension** as a
+*provisional working case* for the observed Q1 1997 cohort's July 1998–June
+1999 reported-dollar forecast: **$825,907**, or **$35.04 per original
+customer**. Its separate July 1999–June 2000 tail sensitivity is **$615,338**.
+The two-window declining extension gives **$718,883** for the main period and
+is a lower-revenue sensitivity, not a floor. The three-window flat alternative
+is **$1,008,568** for the main period. The future Q4 scenarios now vary
+first-purchaser count, repeat behavior, and an illustrative eligible-collected
+fraction separately. The recommendation is no present disbursement and
+a **$1.2 million conditional ceiling** for one Q4 pilot; neither the fraction
+nor the advance is a measured cohort cost. The supplied cohort has
+**$2,500,315.63 observed reported dollars** through June 30, 1998; those
+dollars are separate from all forecasts.
+
+The [forecast comparison](../reports/forecast_extensions.md) explains the
+30-day customer-age windows, complete-window denominators, lookback
+backtests, calendar mapping, and why a short holdout cannot establish a
+year-ahead rule. The [P3.3 diagnostic](../reports/early90_diagnostic.md)
+finds that 6,864 customers (29.1% of the original 23,570) had a
+positive-dollar purchase on a later date in days 1–89; they generated 68.3%
+of observed days 90–449 dollars. This is an association within one cohort,
+not a signal known when an initial advance is made to a future cohort or
+proof of why customers bought again.
+
+The [P3.4 grid](../reports/downside_sensitivity.md) tests weaker
+early-repeat prevalence and reduced contribution from high early spenders.
+I selected the 20% early-repeat and top-quarter cases as
+separate gates; overlapping groups are not double-counted. The Q4 scenario
+translation remains conditional on missing purchaser counts, acquisition
+spend, cohort contribution, and eligible collected revenue. The source and output reconciliation keeps the July 15, 1998 historical gate intact.
 
 ## Dataset described by the readme
 

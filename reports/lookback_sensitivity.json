@@ -1,0 +1,231 @@
+{
+  "status": "lookback sensitivity; three-window declining extension is the working scenario; other lookbacks remain sensitivities",
+  "provisional_working_case": {
+    "lookback_30_day_windows": 3,
+    "extension": "declining",
+    "not_final_base_case": true
+  },
+  "historical_decision_date": "1998-07-15",
+  "observed_cutoff": "1998-06-30",
+  "source_manifest": {
+    "path": "CDNOW_data/CDNOW_master.txt",
+    "size_bytes": 1950452,
+    "line_count": 69659,
+    "sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07"
+  },
+  "observed_reported_dollars_through_cutoff": "2500315.63",
+  "common_backtest": {
+    "held_out_age_windows": "13-14",
+    "fully_eligible_original_customers_in_each_window": 23570,
+    "actual_observed_reported_dollars": 158704.65,
+    "limitation": "only two 30-day windows remain fully observable for all lookbacks without training on the entry window; one short holdout cannot establish a long-run rule"
+  },
+  "additional_backtests": [
+    {
+      "held_out_age_windows": "9-14",
+      "fully_eligible_original_customers_in_each_window": 23570,
+      "actual_observed_reported_dollars": 516248.77,
+      "predictions": [
+        {
+          "lookback_30_day_windows": 2,
+          "training_age_windows": "5-8",
+          "flat_forecast_reported_dollars": 560092.2,
+          "flat_error_percent": 8.5,
+          "declining_forecast_reported_dollars": 521346.59,
+          "declining_error_percent": 1.0
+        },
+        {
+          "lookback_30_day_windows": 3,
+          "training_age_windows": "3-8",
+          "flat_forecast_reported_dollars": 560817.12,
+          "flat_error_percent": 8.6,
+          "declining_forecast_reported_dollars": 493975.97,
+          "declining_error_percent": -4.3
+        },
+        {
+          "lookback_30_day_windows": 4,
+          "training_age_windows": "1-8",
+          "flat_forecast_reported_dollars": 571905.89,
+          "flat_error_percent": 10.8,
+          "declining_forecast_reported_dollars": 466830.68,
+          "declining_error_percent": -9.6
+        }
+      ]
+    },
+    {
+      "held_out_age_windows": "12-14",
+      "fully_eligible_original_customers_in_each_window": 23570,
+      "actual_observed_reported_dollars": 248687.93,
+      "predictions": [
+        {
+          "lookback_30_day_windows": 2,
+          "training_age_windows": "8-11",
+          "flat_forecast_reported_dollars": 256662.23,
+          "flat_error_percent": 3.2,
+          "declining_forecast_reported_dollars": 221992.02,
+          "declining_error_percent": -10.7
+        },
+        {
+          "lookback_30_day_windows": 3,
+          "training_age_windows": "6-11",
+          "flat_forecast_reported_dollars": 267560.84,
+          "flat_error_percent": 7.6,
+          "declining_forecast_reported_dollars": 259345.54,
+          "declining_error_percent": 4.3
+        },
+        {
+          "lookback_30_day_windows": 4,
+          "training_age_windows": "4-11",
+          "flat_forecast_reported_dollars": 276971.68,
+          "flat_error_percent": 11.4,
+          "declining_forecast_reported_dollars": 270136.77,
+          "declining_error_percent": 8.6
+        }
+      ]
+    }
+  ],
+  "method": "for each lookback L, compare mean dollars per fully eligible customer in the most recent L 30-day age windows with the preceding L windows; flat holds the recent mean, declining applies min(1, recent/prior) once per L windows with geometric interpolation; calendar mapping uses observed first-purchase dates and uniform daily spending within each forecast age window",
+  "comparisons": [
+    {
+      "lookback_30_day_windows": 2,
+      "backtest_training_age_windows": "9-12",
+      "backtest_earlier_block_age_windows": "9-10",
+      "backtest_recent_block_age_windows": "11-12",
+      "backtest_decline_factor_per_block": 0.9132,
+      "backtest_predictions": {
+        "flat": {
+          "predicted_reported_dollars": 170665.78,
+          "error_percent": 7.5,
+          "absolute_error_percent": 7.5
+        },
+        "declining": {
+          "predicted_reported_dollars": 159477.28,
+          "error_percent": 0.5,
+          "absolute_error_percent": 0.5
+        }
+      },
+      "forecast_earlier_block_age_windows": "11-12",
+      "forecast_recent_block_age_windows": "13-14",
+      "forecast_recent_dollars_per_customer_per_30_days": 3.3667,
+      "forecast_decline_factor_per_block": 0.9299,
+      "forecast_scenarios": {
+        "flat": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 965453.29,
+          "main_dollars_per_original_customer": 40.96,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 968098.36
+        },
+        "declining": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 718883.42,
+          "main_dollars_per_original_customer": 30.5,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 463052.75
+        }
+      }
+    },
+    {
+      "lookback_30_day_windows": 3,
+      "backtest_training_age_windows": "7-12",
+      "backtest_earlier_block_age_windows": "7-9",
+      "backtest_recent_block_age_windows": "10-12",
+      "backtest_decline_factor_per_block": 0.9221,
+      "backtest_predictions": {
+        "flat": {
+          "predicted_reported_dollars": 174060.95,
+          "error_percent": 9.7,
+          "absolute_error_percent": 9.7
+        },
+        "declining": {
+          "predicted_reported_dollars": 167158.7,
+          "error_percent": 5.3,
+          "absolute_error_percent": 5.3
+        }
+      },
+      "forecast_earlier_block_age_windows": "9-11",
+      "forecast_recent_block_age_windows": "12-14",
+      "forecast_recent_dollars_per_customer_per_30_days": 3.517,
+      "forecast_decline_factor_per_block": 0.9295,
+      "forecast_scenarios": {
+        "flat": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 1008567.72,
+          "main_dollars_per_original_customer": 42.79,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 1011330.92
+        },
+        "declining": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 825907.25,
+          "main_dollars_per_original_customer": 35.04,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 615338.47
+        }
+      }
+    },
+    {
+      "lookback_30_day_windows": 4,
+      "backtest_training_age_windows": "5-12",
+      "backtest_earlier_block_age_windows": "5-8",
+      "backtest_recent_block_age_windows": "9-12",
+      "backtest_decline_factor_per_block": 0.9378,
+      "backtest_predictions": {
+        "flat": {
+          "predicted_reported_dollars": 178772.06,
+          "error_percent": 12.6,
+          "absolute_error_percent": 12.6
+        },
+        "declining": {
+          "predicted_reported_dollars": 174521.84,
+          "error_percent": 10.0,
+          "absolute_error_percent": 10.0
+        }
+      },
+      "forecast_earlier_block_age_windows": "7-10",
+      "forecast_recent_block_age_windows": "11-14",
+      "forecast_recent_dollars_per_customer_per_30_days": 3.4935,
+      "forecast_decline_factor_per_block": 0.8817,
+      "forecast_scenarios": {
+        "flat": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 1001835.06,
+          "main_dollars_per_original_customer": 42.5,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 1004579.81
+        },
+        "declining": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 775138.07,
+          "main_dollars_per_original_customer": 32.89,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 529652.51
+        }
+      }
+    },
+    {
+      "lookback_30_day_windows": 6,
+      "backtest_training_age_windows": "1-12",
+      "backtest_earlier_block_age_windows": "1-6",
+      "backtest_recent_block_age_windows": "7-12",
+      "backtest_decline_factor_per_block": 0.8024,
+      "backtest_predictions": {
+        "flat": {
+          "predicted_reported_dollars": 181413.84,
+          "error_percent": 14.3,
+          "absolute_error_percent": 14.3
+        },
+        "declining": {
+          "predicted_reported_dollars": 171729.42,
+          "error_percent": 8.2,
+          "absolute_error_percent": 8.2
+        }
+      },
+      "forecast_earlier_block_age_windows": "3-8",
+      "forecast_recent_block_age_windows": "9-14",
+      "forecast_recent_dollars_per_customer_per_30_days": 3.6505,
+      "forecast_decline_factor_per_block": 0.8697,
+      "forecast_scenarios": {
+        "flat": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 1046837.78,
+          "main_dollars_per_original_customer": 44.41,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 1049705.83
+        },
+        "declining": {
+          "main_july_1998_june_1999_forecast_reported_dollars": 865014.37,
+          "main_dollars_per_original_customer": 36.7,
+          "separate_july_1999_june_2000_tail_forecast_reported_dollars": 653340.49
+        }
+      }
+    }
+  ],
+  "repayment_eligible_revenue": null
+}

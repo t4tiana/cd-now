@@ -1,0 +1,43 @@
+# Q4 1998 cohort forecast and repayment illustrations
+
+**Decision frame: July 15, 1998.** The only supplied transactions are from 23,570 customers whose first recorded CDnow purchase was in Q1 1997, observed through June 30, 1998. This report translates those observations into an explicitly hypothetical Q4 1998 first-purchase cohort. No Q4 cohort, acquisition count, cost, margin, refunds, or collected revenue is observed. The downside that will drive the investment recommendation and the advance have **not yet been selected**.
+
+## Forecast construction
+
+The example assumes **23,570 new purchasers**, the same size as the historical cohort, entering evenly from October 1 through December 31, 1998. This is a scale illustration, not a prediction of CDnow's actual Q4 acquisitions. Results scale with cohort size only if per-customer behavior stays the same. The model carries over the historical cohort's reported dollars per original customer on each exact customer-age day through day 449. Thereafter it uses the provisional three-window declining extension from [P3.2](forecast_extensions.md). This preserves the day-zero first purchase in the cash-timing illustration; it does not treat the first month as proof of retention. It assumes no explicit Q4 seasonality, price change, channel shift, or change in the product mix.
+
+The separate [purchaser-count scenarios](future_cohort_size_scenarios.md) now test 40,000, 62,000, and 90,000 hypothetical Q4 first purchasers using CDnow's disclosed 1997 first-purchaser count as an anchor and contemporaneous market growth as a cross-check. This 23,570-person calculation remains the unit-scale comparison, not the selected Q4 count or advance.
+
+CDnow's February prospectus reports approximately **209,000 customers who first purchased during all of 1997** and describes paid placements on Lycos and separate alliances with Yahoo!, GeoCities, and Excite. The supplied Q1 1997 cohort contains 23,570 IDs; if the two first-purchase definitions align, the annual company count suggests acquisition accelerated later in 1997. Contemporaneous [April 10 reporting by Jennifer Sullivan in *Wired*](https://www.wired.com/1998/04/dealing-for-dollars/) describes the later, larger Lycos agreement and its expense. These pre-cutoff facts give a reason to test *more* new purchasers, but neither source reports Q4 1998 purchasers or how many each channel generated. At unchanged dollars per purchaser, a cohort of **N** people would have the baseline calendar forecast **$3,155,789 × N / 23,570** through December 2000. A larger cohort can also have a different channel mix, higher cost per incremental purchaser, or weaker repeat spending; the formula is an isolated size sensitivity, not a combined growth forecast.
+
+At this same 23,570-person scale, the historical age pattern has **$990,452** in days 0–29, including first purchases; **$2,122,956** through day 359, of which $861,131 is from days 90–359. The provisional extension adds **$910,432** for days 360–719. Thus the baseline **first 720 customer-age days forecast** for the example Q4 cohort is **$3,033,388** in reported transaction dollars, or **$128.70 per assumed new purchaser**. Only the first 450-day age pattern was fully observed in the Q1 1997 cohort; its later-day continuation is an assumption. This 720-day figure uses an equal follow-up horizon for all assumed Q4 entrants.
+
+For calendar repayment timing, the model runs through **December 31, 2000**. Earlier October entrants have more than 720 days by then, so its calendar total is larger than the equal-age 720-day figure. The $3,155,789 baseline total below is a **forecast of reported transaction dollars**, not observed revenue, economic contribution, cash collected, or repayment-eligible sales. Revenue after the model end is unmodeled, not zero.
+
+| Future-cohort scenario | Assumption applied after customer day 89 | Forecast reported dollars, Q4 1998–Q4 2000 |
+| --- | --- | ---: |
+| Provisional three-window decline | Same per-customer age pattern and 23,570-person scale | $3,155,789 |
+| 20% relative fewer early repeaters | P3.4 anchor factor 0.895588 on age-90-and-later dollars | $2,958,036 |
+| 20% less contribution from the first-90-day top quarter | P3.4 anchor factor 0.873537 on age-90-and-later dollars | $2,916,273 |
+| Two-window decline | Shorter lookback changes the age-450-and-later extension | $3,072,929 |
+
+The first two downside factors were developed for the **observed cohort's remaining dollars** in the [P3.4 grid](downside_sensitivity.md). Applying them to a new cohort's age-90-and-later dollars is a separate illustration. It holds the first 90 days at the historical level, even though fewer early repeaters could also weaken early dollars. This may understate that downside. The cases are one at a time; the high-spender and early-repeater groups overlap. The two-window case tests forecast decay rather than cohort mix. None is a statistical confidence bound. The [JSON output](financing_scenarios.json) shows quarterly revenue for all four scenarios.
+
+## Financing mechanics and timing
+
+For an advance **A**, repayment is half of *eligible* cohort revenue until cumulative repayment reaches **1.2A**. Hence a full payout requires **2.4A of eligible revenue**. The illustration advances cash on October 1, 1998 and assumes the eligible fraction of each day's reported dollars is collected and remitted the same day. Actual collection and remittance lag, returns, exclusions, or attribution errors would delay or reduce receipts. The **80% case is only an arbitrary 20-point haircut I introduced to expose sensitivity; it is neither observed nor a typical rate for this financing.** The actual base must be defined and reconciled with CDnow. The table shows the **$1 million illustrative advance**, which requires **$2.4 million eligible revenue** for its $1.2 million cap. It is **not an advance recommendation**.
+
+| Scenario | If 100% of reported dollars qualify: modeled cap date | If 80% qualify: repayments by Dec. 31, 2000 and cap date |
+| --- | --- | --- |
+| Provisional three-window decline | Feb. 18, 2000 | $1,200,000; Oct. 20, 2000 |
+| 20% relative fewer early repeaters | Apr. 9, 2000 | $1,183,215; cap not reached |
+| 20% less top-quarter contribution | Apr. 21, 2000 | $1,166,509; cap not reached |
+| Two-window decline | Feb. 19, 2000 | $1,200,000; Nov. 21, 2000 |
+
+At $1 million, the maximum **gross** gain is $200,000 before the time value of money, loss risk, and collection costs. If receipts are $1,183,215 by the end date, principal has been recovered but the $1.2 million cap has not been reached; later revenue is unmodeled. At an illustrative **$1.5 million** advance under the provisional baseline, all reported dollars eligible yield only **$1,577,895** by the end date, well below the $1.8 million cap. At 80% eligibility, receipts are **$1,262,316**, below principal. A small advance can appear to cap quickly solely because it has a low repayment target; that says nothing about whether it funds the actual acquisition budget or leaves CDnow enough cash to fulfill orders.
+
+For the $1 million example to reach its cap **by December 31, 2000**, at least **76.1%** of modeled reported dollars must qualify in the provisional case, **81.1%** in the early-repeat downside, and **82.3%** in the top-quarter spending downside. These are arithmetic thresholds, not predictions of eligibility. Even crossing one does not remove remittance, counterparty, timing, or future-cohort risk.
+
+The modeled dates are optimistic about immediate collection, unchanged historical purchase behavior, and perfect cohort attribution. CDnow's 1997 prospectus disclosed a **16.3% company-wide gross margin** on its net-sales definition (see [source note](../docs/company_financial_evidence_1998.md)). It is not this cohort's margin. Nevertheless, a contractual 50% share of eligible sales is a large cash claim relative to that company-wide historical figure. CDnow must provide **cohort-level contribution after procurement, fulfillment, shipping, card fees, returns, support, and acquisition spending** to show it can bear the share without consuming other capital. The transaction file alone cannot establish contribution, acquisition cost, lifetime value, payback, or investor return.
+
+Rebuild the [scenario JSON](financing_scenarios.json) with `.\.venv\Scripts\python.exe scripts\financing_scenarios.py`. The [script](../scripts/financing_scenarios.py) verifies the source manifest and reconciles all complete age windows to the observed cohort output. This analysis does not account for large-scale changes in how media is distributed, shared, or consumed.

@@ -1,0 +1,315 @@
+{
+  "source_sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07",
+  "definition": "transaction dollars / number of CDs on each source row; not a verified album price",
+  "median_weighting": "one value per transaction row, regardless of CD count",
+  "all_rows": {
+    "rows": 69659,
+    "cds": 167881,
+    "reported_dollars": "2500315.63",
+    "rows_below_5_dollars_per_cd": 615,
+    "rows_above_50_dollars_per_cd": 637,
+    "rows_above_100_dollars_per_cd": 80,
+    "minimum_implied_dollars_per_cd": "0.00",
+    "p25_implied_dollars_per_cd_nearest_rank": "12.27",
+    "median_implied_dollars_per_cd": "13.99",
+    "p75_implied_dollars_per_cd_nearest_rank": "15.49",
+    "maximum_implied_dollars_per_cd": "305.99",
+    "total_reported_dollars_divided_by_total_cds": "14.89",
+    "minimum_example": {
+      "source_line_number": 1549,
+      "transaction_date": "1997-01-02",
+      "cd_count": 1,
+      "reported_dollars": "0.00",
+      "implied_dollars_per_cd": "0.00"
+    },
+    "maximum_example": {
+      "source_line_number": 57537,
+      "transaction_date": "1998-03-24",
+      "cd_count": 1,
+      "reported_dollars": "305.99",
+      "implied_dollars_per_cd": "305.99"
+    }
+  },
+  "positive_dollar_rows": {
+    "rows": 69579,
+    "cds": 167801,
+    "reported_dollars": "2500315.63",
+    "rows_below_5_dollars_per_cd": 535,
+    "rows_above_50_dollars_per_cd": 637,
+    "rows_above_100_dollars_per_cd": 80,
+    "minimum_implied_dollars_per_cd": "0.99",
+    "p25_implied_dollars_per_cd_nearest_rank": "12.28",
+    "median_implied_dollars_per_cd": "13.99",
+    "p75_implied_dollars_per_cd_nearest_rank": "15.49",
+    "maximum_implied_dollars_per_cd": "305.99",
+    "total_reported_dollars_divided_by_total_cds": "14.90",
+    "minimum_example": {
+      "source_line_number": 12553,
+      "transaction_date": "1997-09-09",
+      "cd_count": 2,
+      "reported_dollars": "1.98",
+      "implied_dollars_per_cd": "0.99"
+    },
+    "maximum_example": {
+      "source_line_number": 57537,
+      "transaction_date": "1998-03-24",
+      "cd_count": 1,
+      "reported_dollars": "305.99",
+      "implied_dollars_per_cd": "305.99"
+    }
+  },
+  "one_cd_rows": {
+    "rows": 31454,
+    "cds": 31454,
+    "reported_dollars": "516355.76",
+    "rows_below_5_dollars_per_cd": 484,
+    "rows_above_50_dollars_per_cd": 528,
+    "rows_above_100_dollars_per_cd": 69,
+    "minimum_implied_dollars_per_cd": "0.00",
+    "p25_implied_dollars_per_cd_nearest_rank": "11.88",
+    "median_implied_dollars_per_cd": "14.37",
+    "p75_implied_dollars_per_cd_nearest_rank": "15.96",
+    "maximum_implied_dollars_per_cd": "305.99",
+    "total_reported_dollars_divided_by_total_cds": "16.42",
+    "minimum_example": {
+      "source_line_number": 1549,
+      "transaction_date": "1997-01-02",
+      "cd_count": 1,
+      "reported_dollars": "0.00",
+      "implied_dollars_per_cd": "0.00"
+    },
+    "maximum_example": {
+      "source_line_number": 57537,
+      "transaction_date": "1998-03-24",
+      "cd_count": 1,
+      "reported_dollars": "305.99",
+      "implied_dollars_per_cd": "305.99"
+    }
+  },
+  "positive_one_cd_rows": {
+    "rows": 31374,
+    "cds": 31374,
+    "reported_dollars": "516355.76",
+    "rows_below_5_dollars_per_cd": 404,
+    "rows_above_50_dollars_per_cd": 528,
+    "rows_above_100_dollars_per_cd": 69,
+    "minimum_implied_dollars_per_cd": "1.63",
+    "p25_implied_dollars_per_cd_nearest_rank": "11.88",
+    "median_implied_dollars_per_cd": "14.37",
+    "p75_implied_dollars_per_cd_nearest_rank": "15.96",
+    "maximum_implied_dollars_per_cd": "305.99",
+    "total_reported_dollars_divided_by_total_cds": "16.46",
+    "minimum_example": {
+      "source_line_number": 34739,
+      "transaction_date": "1997-05-16",
+      "cd_count": 1,
+      "reported_dollars": "1.63",
+      "implied_dollars_per_cd": "1.63"
+    },
+    "maximum_example": {
+      "source_line_number": 57537,
+      "transaction_date": "1998-03-24",
+      "cd_count": 1,
+      "reported_dollars": "305.99",
+      "implied_dollars_per_cd": "305.99"
+    }
+  },
+  "june_1998_positive_one_cd_rows": {
+    "rows": 787,
+    "cds": 787,
+    "reported_dollars": "13183.00",
+    "rows_below_5_dollars_per_cd": 7,
+    "rows_above_50_dollars_per_cd": 22,
+    "rows_above_100_dollars_per_cd": 0,
+    "minimum_implied_dollars_per_cd": "2.99",
+    "p25_implied_dollars_per_cd_nearest_rank": "11.89",
+    "median_implied_dollars_per_cd": "13.99",
+    "p75_implied_dollars_per_cd_nearest_rank": "16.49",
+    "maximum_implied_dollars_per_cd": "95.49",
+    "total_reported_dollars_divided_by_total_cds": "16.75",
+    "minimum_example": {
+      "source_line_number": 42923,
+      "transaction_date": "1998-06-04",
+      "cd_count": 1,
+      "reported_dollars": "2.99",
+      "implied_dollars_per_cd": "2.99"
+    },
+    "maximum_example": {
+      "source_line_number": 12730,
+      "transaction_date": "1998-06-13",
+      "cd_count": 1,
+      "reported_dollars": "95.49",
+      "implied_dollars_per_cd": "95.49"
+    }
+  },
+  "positive_one_cd_by_quarter": {
+    "1997 Q1": {
+      "rows": 15829,
+      "cds": 15829,
+      "reported_dollars": "262376.91",
+      "rows_below_5_dollars_per_cd": 175,
+      "rows_above_50_dollars_per_cd": 229,
+      "rows_above_100_dollars_per_cd": 33,
+      "minimum_implied_dollars_per_cd": "3.99",
+      "p25_implied_dollars_per_cd_nearest_rank": "11.97",
+      "median_implied_dollars_per_cd": "14.37",
+      "p75_implied_dollars_per_cd_nearest_rank": "16.36",
+      "maximum_implied_dollars_per_cd": "283.97",
+      "total_reported_dollars_divided_by_total_cds": "16.58",
+      "minimum_example": {
+        "source_line_number": 1088,
+        "transaction_date": "1997-01-02",
+        "cd_count": 1,
+        "reported_dollars": "3.99",
+        "implied_dollars_per_cd": "3.99"
+      },
+      "maximum_example": {
+        "source_line_number": 60489,
+        "transaction_date": "1997-03-12",
+        "cd_count": 1,
+        "reported_dollars": "283.97",
+        "implied_dollars_per_cd": "283.97"
+      }
+    },
+    "1997 Q2": {
+      "rows": 4159,
+      "cds": 4159,
+      "reported_dollars": "67865.99",
+      "rows_below_5_dollars_per_cd": 50,
+      "rows_above_50_dollars_per_cd": 63,
+      "rows_above_100_dollars_per_cd": 11,
+      "minimum_implied_dollars_per_cd": "1.63",
+      "p25_implied_dollars_per_cd_nearest_rank": "11.97",
+      "median_implied_dollars_per_cd": "14.37",
+      "p75_implied_dollars_per_cd_nearest_rank": "15.76",
+      "maximum_implied_dollars_per_cd": "219.77",
+      "total_reported_dollars_divided_by_total_cds": "16.32",
+      "minimum_example": {
+        "source_line_number": 34739,
+        "transaction_date": "1997-05-16",
+        "cd_count": 1,
+        "reported_dollars": "1.63",
+        "implied_dollars_per_cd": "1.63"
+      },
+      "maximum_example": {
+        "source_line_number": 34384,
+        "transaction_date": "1997-06-03",
+        "cd_count": 1,
+        "reported_dollars": "219.77",
+        "implied_dollars_per_cd": "219.77"
+      }
+    },
+    "1997 Q3": {
+      "rows": 3151,
+      "cds": 3151,
+      "reported_dollars": "50838.00",
+      "rows_below_5_dollars_per_cd": 60,
+      "rows_above_50_dollars_per_cd": 53,
+      "rows_above_100_dollars_per_cd": 6,
+      "minimum_implied_dollars_per_cd": "2.99",
+      "p25_implied_dollars_per_cd_nearest_rank": "11.97",
+      "median_implied_dollars_per_cd": "14.37",
+      "p75_implied_dollars_per_cd_nearest_rank": "15.49",
+      "maximum_implied_dollars_per_cd": "219.37",
+      "total_reported_dollars_divided_by_total_cds": "16.13",
+      "minimum_example": {
+        "source_line_number": 6223,
+        "transaction_date": "1997-09-16",
+        "cd_count": 1,
+        "reported_dollars": "2.99",
+        "implied_dollars_per_cd": "2.99"
+      },
+      "maximum_example": {
+        "source_line_number": 34386,
+        "transaction_date": "1997-07-31",
+        "cd_count": 1,
+        "reported_dollars": "219.37",
+        "implied_dollars_per_cd": "219.37"
+      }
+    },
+    "1997 Q4": {
+      "rows": 3178,
+      "cds": 3178,
+      "reported_dollars": "52080.55",
+      "rows_below_5_dollars_per_cd": 46,
+      "rows_above_50_dollars_per_cd": 69,
+      "rows_above_100_dollars_per_cd": 8,
+      "minimum_implied_dollars_per_cd": "2.49",
+      "p25_implied_dollars_per_cd_nearest_rank": "12.49",
+      "median_implied_dollars_per_cd": "13.99",
+      "p75_implied_dollars_per_cd_nearest_rank": "15.99",
+      "maximum_implied_dollars_per_cd": "248.49",
+      "total_reported_dollars_divided_by_total_cds": "16.39",
+      "minimum_example": {
+        "source_line_number": 12686,
+        "transaction_date": "1997-10-11",
+        "cd_count": 1,
+        "reported_dollars": "2.49",
+        "implied_dollars_per_cd": "2.49"
+      },
+      "maximum_example": {
+        "source_line_number": 405,
+        "transaction_date": "1997-12-07",
+        "cd_count": 1,
+        "reported_dollars": "248.49",
+        "implied_dollars_per_cd": "248.49"
+      }
+    },
+    "1998 Q1": {
+      "rows": 2652,
+      "cds": 2652,
+      "reported_dollars": "43368.65",
+      "rows_below_5_dollars_per_cd": 48,
+      "rows_above_50_dollars_per_cd": 55,
+      "rows_above_100_dollars_per_cd": 7,
+      "minimum_implied_dollars_per_cd": "2.49",
+      "p25_implied_dollars_per_cd_nearest_rank": "11.88",
+      "median_implied_dollars_per_cd": "13.99",
+      "p75_implied_dollars_per_cd_nearest_rank": "15.49",
+      "maximum_implied_dollars_per_cd": "305.99",
+      "total_reported_dollars_divided_by_total_cds": "16.35",
+      "minimum_example": {
+        "source_line_number": 7341,
+        "transaction_date": "1998-01-09",
+        "cd_count": 1,
+        "reported_dollars": "2.49",
+        "implied_dollars_per_cd": "2.49"
+      },
+      "maximum_example": {
+        "source_line_number": 57537,
+        "transaction_date": "1998-03-24",
+        "cd_count": 1,
+        "reported_dollars": "305.99",
+        "implied_dollars_per_cd": "305.99"
+      }
+    },
+    "1998 Q2": {
+      "rows": 2405,
+      "cds": 2405,
+      "reported_dollars": "39825.66",
+      "rows_below_5_dollars_per_cd": 25,
+      "rows_above_50_dollars_per_cd": 59,
+      "rows_above_100_dollars_per_cd": 4,
+      "minimum_implied_dollars_per_cd": "2.49",
+      "p25_implied_dollars_per_cd_nearest_rank": "11.88",
+      "median_implied_dollars_per_cd": "12.99",
+      "p75_implied_dollars_per_cd_nearest_rank": "15.99",
+      "maximum_implied_dollars_per_cd": "219.49",
+      "total_reported_dollars_divided_by_total_cds": "16.56",
+      "minimum_example": {
+        "source_line_number": 54738,
+        "transaction_date": "1998-05-14",
+        "cd_count": 1,
+        "reported_dollars": "2.49",
+        "implied_dollars_per_cd": "2.49"
+      },
+      "maximum_example": {
+        "source_line_number": 66838,
+        "transaction_date": "1998-05-07",
+        "cd_count": 1,
+        "reported_dollars": "219.49",
+        "implied_dollars_per_cd": "219.49"
+      }
+    }
+  }
+}

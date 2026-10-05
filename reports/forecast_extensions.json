@@ -1,0 +1,191 @@
+{
+  "status": "three-window declining extension is the selected working case; compare with the documented downside and trend sensitivities",
+  "provisional_working_case": {
+    "lookback_30_day_windows": 3,
+    "extension": "declining",
+    "scope": "observed Q1 1997 cohort remaining reported-dollar forecast only",
+    "not_final_base_case": true
+  },
+  "historical_decision_date": "1998-07-15",
+  "observed_cutoff": "1998-06-30",
+  "cohort": "Q1 1997 first recorded purchase; 23,570 customer IDs",
+  "observed_reported_dollars_through_cutoff": "2500315.63",
+  "source_manifest": {
+    "path": "CDNOW_data/CDNOW_master.txt",
+    "size_bytes": 1950452,
+    "line_count": 69659,
+    "sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07"
+  },
+  "method": {
+    "rate": "reported dollars divided by fully eligible customers in each 30-day age window; age zero includes entry and is not used to fit the extension",
+    "flat": "hold the mean of the latest three complete age-window rates",
+    "declining": "multiply that mean by min(1, latest three-window mean / prior three-window mean) once per three 30-day windows, interpolated geometrically by window",
+    "calendar_mapping": "spread each forecast 30-day age-window rate uniformly across its 30 days and weight by observed Q1 1997 first-purchase dates",
+    "anchor": "age windows 9-14 only; all 23,570 customers have complete exposure through age window 14; later observed windows with shrinking denominators do not set the extension"
+  },
+  "backtests": [
+    {
+      "training_age_windows": "3-8",
+      "held_out_age_windows": "9-11",
+      "held_out_eligible_customers_each_window": 23570,
+      "decline_factor_per_three_windows": 0.8954,
+      "actual_observed_dollars_per_customer": 11.35,
+      "actual_observed_cohort_dollars": 267560.84,
+      "predictions": {
+        "flat": {
+          "dollars_per_original_customer": 11.9,
+          "cohort_dollars": 280408.56,
+          "error_percent": 4.8
+        },
+        "declining": {
+          "dollars_per_original_customer": 11.06,
+          "cohort_dollars": 260616.83,
+          "error_percent": -2.6
+        }
+      }
+    },
+    {
+      "training_age_windows": "3-8",
+      "held_out_age_windows": "9-14",
+      "held_out_eligible_customers_each_window": 23570,
+      "decline_factor_per_three_windows": 0.8954,
+      "actual_observed_dollars_per_customer": 21.9,
+      "actual_observed_cohort_dollars": 516248.77,
+      "predictions": {
+        "flat": {
+          "dollars_per_original_customer": 23.79,
+          "cohort_dollars": 560817.12,
+          "error_percent": 8.6
+        },
+        "declining": {
+          "dollars_per_original_customer": 20.96,
+          "cohort_dollars": 493975.97,
+          "error_percent": -4.3
+        }
+      }
+    },
+    {
+      "training_age_windows": "6-11",
+      "held_out_age_windows": "12-14",
+      "held_out_eligible_customers_each_window": 23570,
+      "decline_factor_per_three_windows": 0.9542,
+      "actual_observed_dollars_per_customer": 10.55,
+      "actual_observed_cohort_dollars": 248687.93,
+      "predictions": {
+        "flat": {
+          "dollars_per_original_customer": 11.35,
+          "cohort_dollars": 267560.84,
+          "error_percent": 7.6
+        },
+        "declining": {
+          "dollars_per_original_customer": 11.0,
+          "cohort_dollars": 259345.54,
+          "error_percent": 4.3
+        }
+      }
+    }
+  ],
+  "anchor": {
+    "earlier_age_windows": "9-11",
+    "recent_age_windows": "12-14",
+    "earlier_dollars_per_customer_per_30_days": 3.7839,
+    "recent_dollars_per_customer_per_30_days": 3.517,
+    "decline_factor_per_three_windows": 0.9295
+  },
+  "scenarios": {
+    "flat": {
+      "main_july_1998_june_1999": {
+        "forecast_reported_dollars": 1008567.72,
+        "forecast_dollars_per_original_customer": 42.79,
+        "quarters": [
+          {
+            "calendar_quarter": "1998Q3",
+            "forecast_reported_dollars": 254214.33
+          },
+          {
+            "calendar_quarter": "1998Q4",
+            "forecast_reported_dollars": 254214.33
+          },
+          {
+            "calendar_quarter": "1999Q1",
+            "forecast_reported_dollars": 248687.93
+          },
+          {
+            "calendar_quarter": "1999Q2",
+            "forecast_reported_dollars": 251451.13
+          }
+        ]
+      },
+      "separate_tail_july_1999_june_2000": {
+        "forecast_reported_dollars": 1011330.92,
+        "forecast_dollars_per_original_customer": 42.91,
+        "quarters": [
+          {
+            "calendar_quarter": "1999Q3",
+            "forecast_reported_dollars": 254214.33
+          },
+          {
+            "calendar_quarter": "1999Q4",
+            "forecast_reported_dollars": 254214.33
+          },
+          {
+            "calendar_quarter": "2000Q1",
+            "forecast_reported_dollars": 251451.13
+          },
+          {
+            "calendar_quarter": "2000Q2",
+            "forecast_reported_dollars": 251451.13
+          }
+        ]
+      }
+    },
+    "declining": {
+      "main_july_1998_june_1999": {
+        "forecast_reported_dollars": 825907.25,
+        "forecast_dollars_per_original_customer": 35.04,
+        "quarters": [
+          {
+            "calendar_quarter": "1998Q3",
+            "forecast_reported_dollars": 231802.71
+          },
+          {
+            "calendar_quarter": "1998Q4",
+            "forecast_reported_dollars": 215101.45
+          },
+          {
+            "calendar_quarter": "1999Q1",
+            "forecast_reported_dollars": 195421.62
+          },
+          {
+            "calendar_quarter": "1999Q2",
+            "forecast_reported_dollars": 183581.47
+          }
+        ]
+      },
+      "separate_tail_july_1999_june_2000": {
+        "forecast_reported_dollars": 615338.47,
+        "forecast_dollars_per_original_customer": 26.11,
+        "quarters": [
+          {
+            "calendar_quarter": "1999Q3",
+            "forecast_reported_dollars": 172297.51
+          },
+          {
+            "calendar_quarter": "1999Q4",
+            "forecast_reported_dollars": 159884.25
+          },
+          {
+            "calendar_quarter": "2000Q1",
+            "forecast_reported_dollars": 146811.63
+          },
+          {
+            "calendar_quarter": "2000Q2",
+            "forecast_reported_dollars": 136345.09
+          }
+        ]
+      }
+    }
+  },
+  "repayment_eligible_revenue": null,
+  "repayment_eligibility_note": "not established by the transaction file; neither scenario is a repayment forecast"
+}

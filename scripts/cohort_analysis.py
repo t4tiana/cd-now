@@ -1,4 +1,4 @@
-"""Start the reproducible phase 2 analysis with a source-to-staging reconciliation."""
+"""Build reproducible phase 2 summaries with source-to-staging reconciliation."""
 
 import hashlib
 import json
@@ -550,7 +550,7 @@ def build_report(connection: duckdb.DuckDBPyConnection) -> dict:
     entry_quarter_dollars = Decimal(quarters[0]["reported_dollars"])
     return {
         "phase": "2: observed cohort",
-        "status": "P2.6 repeat purchasing and customer distribution calculated; findings note and final verification remain",
+        "status": "Phase 2 observed-cohort analysis verified; external claims audited separately",
         "source_manifest": manifest,
         "measurement_contract": {
             "path": CONTRACT.relative_to(ROOT).as_posix(),

@@ -1,0 +1,212 @@
+{
+  "status": "diagnostic only; neither method selected as final forecast",
+  "historical_decision_date": "1998-07-15",
+  "observed_cutoff": "1998-06-30",
+  "observed_reported_dollars_through_cutoff": "2500315.63",
+  "source_manifest": {
+    "path": "CDNOW_data/CDNOW_master.txt",
+    "size_bytes": 1950452,
+    "line_count": 69659,
+    "sha256": "61fd6f7bf3497187a7ec0d9ff6a99b7568f1fe911a9f3665e02efecd6b34ed07"
+  },
+  "method": "ordinary least squares on log of reported dollars per original customer in each fully observed 30-day age window 3 through origin; extrapolate the fitted line and exponentiate. Age 0 contains first purchases; ages 1\u20132 are excluded to focus on repeat-era trend. The comparison uses the provisional three-window geometric decline on the same holdouts and calendar mapping.",
+  "log_linear_final_slope_per_30_days": -0.025569,
+  "log_linear_final_rate_ratio_per_30_days": 0.974755,
+  "holdouts": [
+    {
+      "training_age_windows": "3-8 for log-linear; 3-8 for three-window",
+      "held_out_age_windows": "9-11",
+      "actual_observed_reported_dollars": 267560.84,
+      "log_linear_slope_per_30_days": -0.0258,
+      "candidates": {
+        "log_linear": {
+          "forecast_reported_dollars": 263488.85,
+          "error_percent": -1.5,
+          "absolute_error_percent": 1.5
+        },
+        "three_window_decline": {
+          "forecast_reported_dollars": 260616.83,
+          "error_percent": -2.6,
+          "absolute_error_percent": 2.6
+        }
+      }
+    },
+    {
+      "training_age_windows": "3-8 for log-linear; 3-8 for three-window",
+      "held_out_age_windows": "9-14",
+      "actual_observed_reported_dollars": 516248.77,
+      "log_linear_slope_per_30_days": -0.0258,
+      "candidates": {
+        "log_linear": {
+          "forecast_reported_dollars": 507352.75,
+          "error_percent": -1.7,
+          "absolute_error_percent": 1.7
+        },
+        "three_window_decline": {
+          "forecast_reported_dollars": 493975.97,
+          "error_percent": -4.3,
+          "absolute_error_percent": 4.3
+        }
+      }
+    },
+    {
+      "training_age_windows": "3-11 for log-linear; 6-11 for three-window",
+      "held_out_age_windows": "12-14",
+      "actual_observed_reported_dollars": 248687.93,
+      "log_linear_slope_per_30_days": -0.025987,
+      "candidates": {
+        "log_linear": {
+          "forecast_reported_dollars": 244637.54,
+          "error_percent": -1.6,
+          "absolute_error_percent": 1.6
+        },
+        "three_window_decline": {
+          "forecast_reported_dollars": 259345.54,
+          "error_percent": 4.3,
+          "absolute_error_percent": 4.3
+        }
+      }
+    },
+    {
+      "training_age_windows": "3-12 for log-linear; 7-12 for three-window",
+      "held_out_age_windows": "13-14",
+      "actual_observed_reported_dollars": 158704.65,
+      "log_linear_slope_per_30_days": -0.022022,
+      "candidates": {
+        "log_linear": {
+          "forecast_reported_dollars": 166037.84,
+          "error_percent": 4.6,
+          "absolute_error_percent": 4.6
+        },
+        "three_window_decline": {
+          "forecast_reported_dollars": 167158.7,
+          "error_percent": 5.3,
+          "absolute_error_percent": 5.3
+        }
+      }
+    }
+  ],
+  "training_start_sensitivity": [
+    {
+      "training_age_windows": "1-14",
+      "rate_ratio_per_30_days": 0.96398,
+      "main_july_1998_june_1999_reported_dollars": 690947.12,
+      "separate_july_1999_june_2000_tail_reported_dollars": 443142.95
+    },
+    {
+      "training_age_windows": "2-14",
+      "rate_ratio_per_30_days": 0.972471,
+      "main_july_1998_june_1999_reported_dollars": 767176.8,
+      "separate_july_1999_june_2000_tail_reported_dollars": 547505.34
+    },
+    {
+      "training_age_windows": "3-14",
+      "rate_ratio_per_30_days": 0.974755,
+      "main_july_1998_june_1999_reported_dollars": 788475.09,
+      "separate_july_1999_june_2000_tail_reported_dollars": 579018.54
+    },
+    {
+      "training_age_windows": "4-14",
+      "rate_ratio_per_30_days": 0.973602,
+      "main_july_1998_june_1999_reported_dollars": 777959.1,
+      "separate_july_1999_june_2000_tail_reported_dollars": 563119.75
+    },
+    {
+      "training_age_windows": "5-14",
+      "rate_ratio_per_30_days": 0.976495,
+      "main_july_1998_june_1999_reported_dollars": 803823.82,
+      "separate_july_1999_june_2000_tail_reported_dollars": 603253.47
+    },
+    {
+      "training_age_windows": "6-14",
+      "rate_ratio_per_30_days": 0.977634,
+      "main_july_1998_june_1999_reported_dollars": 813931.35,
+      "separate_july_1999_june_2000_tail_reported_dollars": 619576.33
+    }
+  ],
+  "forecasts": {
+    "log_linear": {
+      "main_july_1998_june_1999_reported_dollars": 788475.09,
+      "main_dollars_per_original_customer": 33.45,
+      "main_quarters": [
+        {
+          "calendar_quarter": "1998Q3",
+          "forecast_reported_dollars": 222418.96
+        },
+        {
+          "calendar_quarter": "1998Q4",
+          "forecast_reported_dollars": 205644.01
+        },
+        {
+          "calendar_quarter": "1999Q1",
+          "forecast_reported_dollars": 186157.93
+        },
+        {
+          "calendar_quarter": "1999Q2",
+          "forecast_reported_dollars": 174254.19
+        }
+      ],
+      "separate_july_1999_june_2000_tail_reported_dollars": 579018.54,
+      "tail_quarters": [
+        {
+          "calendar_quarter": "1999Q3",
+          "forecast_reported_dollars": 162952.73
+        },
+        {
+          "calendar_quarter": "1999Q4",
+          "forecast_reported_dollars": 150663.42
+        },
+        {
+          "calendar_quarter": "2000Q1",
+          "forecast_reported_dollars": 137844.83
+        },
+        {
+          "calendar_quarter": "2000Q2",
+          "forecast_reported_dollars": 127557.56
+        }
+      ]
+    },
+    "three_window_decline": {
+      "main_july_1998_june_1999_reported_dollars": 825907.25,
+      "main_dollars_per_original_customer": 35.04,
+      "main_quarters": [
+        {
+          "calendar_quarter": "1998Q3",
+          "forecast_reported_dollars": 231802.71
+        },
+        {
+          "calendar_quarter": "1998Q4",
+          "forecast_reported_dollars": 215101.45
+        },
+        {
+          "calendar_quarter": "1999Q1",
+          "forecast_reported_dollars": 195421.62
+        },
+        {
+          "calendar_quarter": "1999Q2",
+          "forecast_reported_dollars": 183581.47
+        }
+      ],
+      "separate_july_1999_june_2000_tail_reported_dollars": 615338.47,
+      "tail_quarters": [
+        {
+          "calendar_quarter": "1999Q3",
+          "forecast_reported_dollars": 172297.51
+        },
+        {
+          "calendar_quarter": "1999Q4",
+          "forecast_reported_dollars": 159884.25
+        },
+        {
+          "calendar_quarter": "2000Q1",
+          "forecast_reported_dollars": 146811.63
+        },
+        {
+          "calendar_quarter": "2000Q2",
+          "forecast_reported_dollars": 136345.09
+        }
+      ]
+    }
+  },
+  "limitations": "The holdouts overlap and are much shorter than the decision horizon. Fifteen fully observed age windows from one cohort cannot identify seasonality, future acquisition mix, or a long-run decay law. These are reported transaction dollars, not eligible or collected revenue."
+}

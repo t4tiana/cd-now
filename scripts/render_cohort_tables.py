@@ -296,16 +296,7 @@ def render(report: dict) -> str:
             "downside assumptions and separate eligibility rules."
         ),
         "",
-        (
-            "A [January 1998 Amazon release](https://press.aboutamazon.com/1998/1/amazon-com-announces-financial-results-for-fourth-quarter-and-1997-year-end) "
-            "reported that repeat customers placed over 58% of Q4 1997 *orders*. "
-            "A [May 22, 1998 CDnow interview](https://www.worldradiohistory.com/Archive-All-Music/Archive-RandR/1990s/1998/RR-1998-05-22.pdf) "
-            "reported that existing customers generated 51% of Q1 1998 "
-            "*company-wide sales*. Neither measure is comparable to this "
-            "cohort's 48.9% share of customers with a later-date row. "
-            "Comparable CDnow cohorts with the same definition and follow-up "
-            "would be more useful."
-        ),
+        "Comparable CDnow cohorts with the same definition and follow-up would be more useful than comparisons with differently defined company-wide measures.",
         "",
     ]
     return "\n".join(lines)
